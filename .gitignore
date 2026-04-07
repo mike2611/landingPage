@@ -1,0 +1,6 @@
+mp-web-solutions.zip
+mp-web-solutions.zip:Zone.Identifier
+
+# Claude
+.claude/
+*.claude
