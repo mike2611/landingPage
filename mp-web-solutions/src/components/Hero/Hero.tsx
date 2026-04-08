@@ -69,14 +69,17 @@ export default function Hero() {
 
       {/* Floating expertise card — bottom right */}
       <motion.div
-        className="absolute bottom-10 right-6 md:right-16 z-20 p-5 glass-panel rounded-xl max-w-xs"
+        className="absolute bottom-10 right-6 md:right-16 z-20 p-6 md:p-7 glass-panel rounded-2xl max-w-[min(100vw-3rem,20rem)] md:max-w-[22rem] border border-tertiary/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.45)]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
       >
-        <p className="text-xs text-primary font-black tracking-widest uppercase mb-1">Expertise</p>
-        <p className="text-white text-sm font-medium leading-snug">
-          Integrating Real-time AI (GenAI, Whisper, Computer Vision) into Scalable Web Systems.
+        <p className="font-heading text-[0.65rem] text-tertiary/80 font-semibold tracking-[0.22em] uppercase mb-3">
+          Especialidad
+        </p>
+        <p className="font-heading text-[0.95rem] md:text-base text-white/95 font-semibold leading-snug tracking-tight">
+          Ingeniería de Ventas Digitales y{" "}
+          <span className="text-primary font-semibold">SEO Local</span>
         </p>
       </motion.div>
 
