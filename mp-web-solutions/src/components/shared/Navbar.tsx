@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { Building2 } from "lucide-react";
+import {Network} from "lucide-react";
 
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5">
       <div className="flex justify-between items-center px-6 md:px-12 py-6 max-w-7xl mx-auto">
         <div className="flex items-center gap-3">
-          <Building2 className="text-primary w-8 h-8" />
+          <Network className="text-primary w-8 h-8" />
           <span className="text-lg font-bold tracking-[0.2em] uppercase">MP Web Solutions</span>
         </div>
         <nav className="hidden md:flex gap-10">

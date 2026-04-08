@@ -1,9 +1,11 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import "@fontsource-variable/mona-sans";
+@import "@fontsource-variable/inter";
 
 @theme {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Mona Sans Variable", ui-sans-serif, system-ui, sans-serif;
+
   --color-primary: #E76354;
   --color-background: #071108;
   --color-surface: #151e16;
@@ -16,6 +18,10 @@
 @layer base {
   body {
     @apply bg-background text-white antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
   }
 }
 
