@@ -2,8 +2,8 @@ import { motion } from "motion/react";
 import { CheckCircle2, FileText } from "lucide-react";
 
 const highlights = [
-  "Estrategias avanzadas de SEO para posicionamiento global.",
-  "Desarrollo Frontend con enfoque en rendimiento y accesibilidad."
+  "Experiencia liderando desarrollo en plataformas financieras donde seguridad, precisión y velocidad son innegociables.",
+  "Construcción de soluciones con estándares empresariales, enfocadas en escalabilidad y rendimiento.",
 ];
 
 export default function Resume() {
@@ -16,10 +16,8 @@ export default function Resume() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-8">MP Web Solutions Resume</h2>
-            <p className="text-tertiary text-xl mb-12 leading-relaxed font-light">
-              Más de <span className="text-white font-bold">8 años de experiencia</span> transformando visiones comerciales en realidades técnicas. Especialistas en Next.js, React, SEO técnico y optimización de conversión (CRO).
-            </p>
+            <h2 className="font-heading text-4xl font-bold mb-5">Líder Técnico & Arquitecto de Software</h2>
+
             <ul className="space-y-6 mb-12">
               {highlights.map((text, i) => (
                 <li key={i} className="flex items-start gap-4">
@@ -48,11 +46,12 @@ export default function Resume() {
                 <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
               </div>
               <div className="space-y-2">
-                <p className="text-tertiary"><span className="text-primary">const</span> solution = {"{"}</p>
-                <p className="pl-4 text-tertiary">agency: <span className="text-primary">"MP Web Solutions"</span>,</p>
-                <p className="pl-4 text-tertiary">experience: <span className="text-primary">"8+ years"</span>,</p>
-                <p className="pl-4 text-tertiary">stack: [<span className="text-primary">"Next.js", "React", "Node"</span>],</p>
-                <p className="pl-4 text-tertiary">focus: <span className="text-primary">"Conversion Optimization"</span></p>
+                <p className="text-tertiary"><span className="text-primary">const</span> profile = {"{"}</p>
+                <p className="pl-4 text-tertiary">role: <span className="text-primary">"Líder Técnico & Arquitecto"</span>,</p>
+                <p className="pl-4 text-tertiary">experience: <span className="text-primary">"5+ years"</span>,</p>
+                <p className="pl-4 text-tertiary">cloud: [<span className="text-primary">"AWS CCP", "Azure AZ-900"</span>],</p>
+                <p className="pl-4 text-tertiary">specialization: <span className="text-primary">"Fintech & Banking Systems"</span>,</p>
+                <p className="pl-4 text-tertiary">standard: <span className="text-primary">"Enterprise Grade"</span></p>
                 <p className="text-tertiary">{"};"}</p>
               </div>
             </div>
