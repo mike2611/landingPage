@@ -50,7 +50,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
-              className="p-10 glass-panel rounded-2xl flex flex-col justify-between hover:translate-y-[-8px] transition-all duration-300"
+              className="p-10 glass-panel rounded-2xl flex flex-col justify-between hover:-translate-y-2 transition-transform duration-200"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -66,8 +66,10 @@ export default function Testimonials() {
                 <img
                   src={t.img}
                   alt={t.name}
+                  width={56}
+                  height={56}
                   referrerPolicy="no-referrer"
-                  className="w-14 h-14 rounded-full object-cover"
+                  className="w-14 h-14 rounded-full object-cover shrink-0"
                 />
                 <div>
                   <p className="text-white font-bold">{t.name}</p>
