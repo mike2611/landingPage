@@ -40,6 +40,10 @@ export default function Services() {
             <h3 className="text-4xl md:text-5xl font-bold tracking-tight font-heading">
               Metodología de Precisión
             </h3>
+            <h2 className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] uppercase text-primary mb-4">
+              El Proceso
+            </h2>
+            <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Metodología de Precisión</h3>
           </motion.div>
           <motion.p
             className="text-tertiary max-w-md text-lg leading-relaxed"
@@ -79,6 +83,14 @@ export default function Services() {
                 <p className="text-tertiary font-sanstext-sm md:text-[0.9375rem] leading-relaxed mt-auto">
                   {item.desc}
                 </p>
+          {services.map((item, i) => (
+            <motion.div
+              key={i}
+              variants={fadeIn}
+              className="p-10 bg-surface rounded-xl group hover:bg-surface-high transition-colors duration-200 border border-border"
+            >
+              <div className="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-200">
+                {item.icon}
               </div>
                 
               </motion.div>

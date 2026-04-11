@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { CheckCircle2, FileText } from "lucide-react";
+import { resumeDownloadHref } from "../../lib/links";
 
 const highlights = [
   "Experiencia liderando desarrollo en plataformas financieras donde seguridad, precisión y velocidad son innegociables.",
@@ -7,9 +9,11 @@ const highlights = [
 ];
 
 export default function Resume() {
+  const resumePdf = resumeDownloadHref();
+
   return (
     <section className="py-32 px-6 md:px-12 overflow-hidden" id="resume">
-      <div className="max-w-7xl mx-auto bg-surface-high rounded-3xl p-8 md:p-20 relative border border-white/5">
+      <div className="max-w-7xl mx-auto bg-surface-high rounded-3xl p-8 md:p-20 relative border border-border">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,10 +30,25 @@ export default function Resume() {
                 </li>
               ))}
             </ul>
-            <button className="inline-flex items-center gap-4 bg-tertiary/10 border border-tertiary/30 text-white px-8 py-5 rounded-lg hover:bg-tertiary/20 transition-all font-bold group">
-              <FileText className="group-hover:rotate-12 transition-transform" />
-              Descargar MP Web Solutions Resume
-            </button>
+            {resumePdf ? (
+              <a
+                href={resumePdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-4 bg-tertiary/10 border border-tertiary/30 text-white px-8 py-5 rounded-lg hover:bg-tertiary/20 transition-colors duration-200 font-bold group"
+              >
+                <FileText className="group-hover:rotate-12 transition-transform duration-200" aria-hidden />
+                Descargar CV (PDF)
+              </a>
+            ) : (
+              <Link
+                to="/#resume"
+                className="inline-flex items-center gap-4 bg-tertiary/10 border border-tertiary/30 text-white px-8 py-5 rounded-lg hover:bg-tertiary/20 transition-colors duration-200 font-bold group"
+              >
+                <FileText className="group-hover:rotate-12 transition-transform duration-200" aria-hidden />
+                Ver trayectoria
+              </Link>
+            )}
           </motion.div>
 
           <motion.div
@@ -39,7 +58,7 @@ export default function Resume() {
             viewport={{ once: true }}
           >
             <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
-            <div className="relative bg-surface rounded-2xl p-8 border border-white/5 shadow-2xl font-mono text-sm">
+            <div className="relative bg-surface rounded-2xl p-8 border border-border shadow-2xl font-mono text-sm">
               <div className="flex gap-2 mb-8">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
