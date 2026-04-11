@@ -38,3 +38,26 @@
   background: rgba(54, 70, 82, 0.1);
   border: 1px solid var(--color-border);
 }
+
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-border {
+  to { --border-angle: 360deg; }
+}
+
+.btn-gradient-border {
+  padding: 1px;
+  border-radius: 0.5rem;
+  background: conic-gradient(
+    from var(--border-angle),
+    var(--color-tertiary) 0%,
+    var(--color-primary) 40%,
+    var(--color-tertiary) 60%,
+    var(--color-tertiary) 100%
+  );
+  animation: spin-border 4s linear infinite;
+}

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Bot, Gauge, ScanEye, Workflow, type LucideIcon } from "lucide-react";
 import { fadeIn, staggerContainer } from "../lib/animations";
+import cattleVideo from "../assets/bg-card-cattle.mp4";
 
 type Project = {
   icon: LucideIcon;
@@ -12,6 +13,7 @@ type Project = {
   metric?: { value: string; label: string };
   colSpan: string;
   dotGrid?: boolean;
+  video?: string;
 };
 
 const projects: Project[] = [
@@ -40,6 +42,7 @@ const projects: Project[] = [
     desc: "Agente inteligente para el monitoreo preventivo de ganado. Implementación de modelos YOLO para la detección de patrones de alimentación y comportamiento en tiempo real, optimizando la salud animal en el sector Laguna.",
     stack: ["Python", "YOLO", "Cloud Storage"],
     colSpan: "lg:col-span-1",
+    video: cattleVideo,
   },
   {
     icon: Workflow,
@@ -89,19 +92,36 @@ export default function Portfolio() {
                 key={project.title}
                 variants={fadeIn}
                 className={[
-                  "group flex flex-col gap-6 p-8 md:p-10 rounded-2xl border border-border",
-                  "bg-surface hover:bg-surface-high hover:border-white/15",
-                  "transition-colors duration-200",
+                  "group relative overflow-hidden flex flex-col gap-6 p-8 md:p-10 rounded-2xl border border-border",
+                  project.video
+                    ? "hover:border-white/20 transition-colors duration-300"
+                    : "bg-surface hover:bg-surface-high hover:border-white/15 transition-colors duration-200",
                   project.dotGrid
                     ? "bg-[radial-gradient(circle,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px]"
                     : "",
                   project.colSpan,
                 ].join(" ")}
               >
+                {/* Video background — subtle cinematic layer */}
+                {project.video && (
+                  <div className="absolute inset-0 z-0">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-[1.07] transition-transform duration-700 ease-out"
+                    >
+                      <source src={project.video} type="video/mp4" />
+                    </video>
+                    <div className="absolute inset-0 bg-surface/[0.82] group-hover:bg-surface/[0.68] transition-colors duration-500" />
+                  </div>
+                )}
+
                 {/* Top row: icon + tag */}
-                <div className="flex items-start justify-between gap-4">
+                <div className="relative z-10 flex items-start justify-between gap-4">
                   <div className="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center shrink-0">
-                    <Icon className="w-6 h-6 text-primary" strokeWidth={1.75} />
+                    <Icon className="w-6 h-6 text-primary" strokeWidth={1.75} aria-hidden />
                   </div>
                   <span className="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-tertiary/70 border border-border px-3 py-1 rounded-full whitespace-nowrap">
                     {project.tag}
@@ -109,7 +129,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Body */}
-                <div className="flex flex-col gap-3 flex-1">
+                <div className="relative z-10 flex flex-col gap-3 flex-1">
                   <h2 className="font-heading text-xl md:text-2xl font-bold tracking-tight text-white">
                     {project.title}
                   </h2>
@@ -124,7 +144,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Footer: metric or stack pills */}
-                <div className="border-t border-border pt-5 mt-auto">
+                <div className="relative z-10 border-t border-border pt-5 mt-auto">
                   {project.metric ? (
                     <div>
                       <p className="font-heading font-extrabold text-4xl text-primary leading-none mb-1">

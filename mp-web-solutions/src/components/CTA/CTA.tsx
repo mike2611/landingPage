@@ -10,12 +10,12 @@ export default function CTA() {
     <section id="contact" className="py-32 px-6 md:px-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <motion.h2
-          className="text-4xl md:text-7xl font-extrabold mb-10 tracking-tight leading-[1.1]"
+          className="text-4xl md:text-7xl font-extrabold font-heading mb-10 tracking-tight leading-[1.1]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <ChevronRight className="inline-block text-primary w-12 h-12 md:w-20 md:h-20 align-middle" aria-hidden />{" "}
+          <ChevronRight className="inline-block text-primary font-heading w-12 h-12 md:w-20 md:h-20 align-middle" aria-hidden />{" "}
           Haz crecer tu negocio con una <br className="hidden md:block" /> página web profesional
         </motion.h2>
         <motion.div
@@ -29,7 +29,7 @@ export default function CTA() {
             {...(waNewTab
               ? { target: "_blank", rel: "noopener noreferrer" as const }
               : {})}
-            className="inline-flex items-center justify-center bg-primary text-white px-12 py-6 rounded-lg text-xl font-bold hover:shadow-[0_20px_60px_rgba(231,99,84,0.3)] transition-shadow duration-200 active:scale-[0.98]"
+            className="inline-flex text-primary items-center justify-center bg-primary text-white px-12 py-6 rounded-lg text-xl font-bold hover:shadow-[0_20px_60px_rgba(231,99,84,0.3)] transition-shadow duration-200 active:scale-[0.98]"
           >
             Comienza tu Proyecto
           </a>

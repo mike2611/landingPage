@@ -1,9 +1,11 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
 import HashScroll from "./components/shared/HashScroll";
 import Home from "./pages/Home";
-import Portfolio from "./pages/Portfolio";
+
+const Portfolio = lazy(() => import("./pages/Portfolio"));
 
 export default function App() {
   return (
@@ -14,7 +16,7 @@ export default function App() {
         <main className="pt-24">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio" element={<Suspense fallback={null}><Portfolio /></Suspense>} />
           </Routes>
         </main>
         <Footer />

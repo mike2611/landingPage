@@ -1,26 +1,32 @@
 import { motion } from "motion/react";
 import { Brain, Zap, MessageCircle, type LucideIcon } from "lucide-react";
-import { fadeIn, staggerContainer } from "../../lib/animations";
+import { staggerContainer } from "../../lib/animations";
 
-const services: {
+type Service = {
   icon: LucideIcon;
   title: string;
   desc: string;
-}[] = [
+  detail: string;
+};
+
+const services: Service[] = [
   {
     icon: Brain,
     title: "Experiencias de Alto Rendimiento que Convierten",
-    desc: "Combinamos psicología del consumidor con ingeniería de vanguardia. No solo creamos interfaces modernas y elegantes; construimos infraestructuras de carga instantánea (compruébalo navegando este sitio). Eliminamos la fricción desde el primer clic para asegurar que cada visita se transforme en un cliente potencial.",
+    desc: "Interfaces rápidas y optimizadas que convierten visitas en clientes.",
+    detail: "Velocidad de carga en segundos · Lighthouse 99+",
   },
   {
     icon: Zap,
     title: "Seguridad y Estabilidad de Escala Global",
-    desc: "Tu presencia digital respaldada por la misma tecnología que utilizan las empresas más grandes del mundo. Implementamos arquitectura en la nube (AWS) para garantizar hasta un 99.9% de disponibilidad. Un sitio robusto, escalable y siempre en línea para que tú te enfoques solo en crecer.",
+    desc: "Tu presencia respaldada por la misma tecnología que utilizan empresas internacionales.",
+    detail: "99.9% uptime garantizado · Arquitectura AWS",
   },
   {
     icon: MessageCircle,
     title: "Tu Negocio en Piloto Automático",
-    desc: "Transformamos procesos manuales en sistemas inteligentes que trabajan por ti. Implementamos flujos de captura que conectan directamente con tu WhatsApp, permitiéndote recibir leads calificados y automatizar el llenado de formularios. Tu sitio deja de ser un folleto para convertirse en tu mejor vendedor, activo las 24 horas.",
+    desc: "Transformamos procesos manuales en sistemas inteligentes que trabajan para ti.",
+    detail: "Leads directo a tu WhatsApp · Sin intermediarios",
   },
 ];
 
@@ -34,12 +40,12 @@ export default function Services() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] uppercase text-primary mb-4">
+            <p className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] uppercase text-primary mb-4">
               El Proceso
-            </h2>
-            <h3 className="text-4xl md:text-5xl font-bold tracking-tight font-heading">
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-heading">
               Metodología de Precisión
-            </h3>
+            </h2>
           </motion.div>
           <motion.p
             className="text-tertiary max-w-md text-lg leading-relaxed"
@@ -64,20 +70,44 @@ export default function Services() {
             return (
               <motion.div
                 key={i}
-                variants={fadeIn}
-                className="flex flex-col p-8 md:p-10 bg-surface rounded-2xl group hover:bg-surface-high transition-colors duration-200 border border-white/5 hover:border-white/10"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -6 }}
+                whileTap={{ scale: 0.98 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="flex flex-col p-8 md:p-10 bg-surface rounded-2xl group cursor-pointer
+                           border border-white/5
+                           hover:border-primary/25
+                           hover:bg-surface-high
+                           hover:shadow-[0_8px_32px_-8px_rgba(231,99,84,0.2)]
+                           transition-colors duration-200"
               >
-                <div className="flex flex-col gap-2">
-                  <div className="flex justify-center items-center">
-                    <div className="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center mb-8 shrink-0 group-hover:scale-105 transition-transform duration-200">
-                      <Icon className="w-7 h-7 text-primary" strokeWidth={1.75} />
-                    </div>
+                {/* Icon */}
+                <div className="flex justify-center items-center mb-8">
+                  <div className="w-14 h-14 rounded-full bg-secondary-container group-hover:bg-tertiary/20 flex items-center justify-center shrink-0 transition-colors duration-200">
+                    <Icon
+                      className="w-7 h-7 text-primary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-200"
+                      strokeWidth={1.75}
+                      aria-hidden
+                    />
                   </div>
-                  <h4 className="text-xl md:text-2xl font-bold font-heading tracking-tight mb-5">
-                    {item.title}
-                  </h4>
-                  <p className="text-tertiary text-sm md:text-[0.9375rem] leading-relaxed mt-auto">
-                    {item.desc}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-bold font-heading tracking-tight mb-4">
+                  {item.title}
+                </h3>
+
+                {/* Default desc */}
+                <p className="text-tertiary text-sm md:text-[0.9375rem] leading-relaxed">
+                  {item.desc}
+                </p>
+
+                {/* Hover reveal */}
+                <div className="overflow-hidden max-h-0 group-hover:max-h-12 transition-all duration-300 ease-out">
+                  <p className="text-tertiary text-xs font-mono font-medium mt-4 pt-4 border-t border-primary/20">
+                    {item.detail}
                   </p>
                 </div>
               </motion.div>

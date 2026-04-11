@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { MessageCircle, ArrowRight } from "lucide-react";
-import { fadeIn, staggerContainer } from "../../lib/animations";
+import { fadeIn, heroFadeIn, staggerContainer } from "../../lib/animations";
 import { opensInHttpTab, whatsappHref } from "../../lib/links";
 import heroImage from "../../assets/web-solutions-bk.webp";
 
@@ -13,21 +13,27 @@ export default function Hero() {
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
 
       {/* Background image — bleeds right, fades left */}
-      <motion.div
-        className="absolute inset-y-0 end-0 w-full lg:w-[60%] z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <div className="absolute inset-y-0 end-0 w-full lg:w-[60%] z-0">
         <img
           src={heroImage}
           alt="Vista de panel web MP Web Solutions"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover object-left"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
-      </motion.div>
+        <motion.div
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
+        </motion.div>
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 py-24">
         <motion.div
@@ -37,13 +43,13 @@ export default function Hero() {
           variants={staggerContainer}
         >
           <motion.span
-            variants={fadeIn}
+            variants={heroFadeIn}
             className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-tertiary border border-tertiary/20 bg-surface/80"
           >
             MP WEB SOLUTIONS
           </motion.span>
           <motion.h1
-            variants={fadeIn}
+            variants={heroFadeIn}
             className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-8"
           >
             Soluciones web que convierten{" "}
