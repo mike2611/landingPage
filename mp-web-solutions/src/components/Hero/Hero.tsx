@@ -83,11 +83,11 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.3 }}
       >
-        <p className="text-xs text-primary font-black tracking-widest uppercase mb-1">
-          Especialización
+        <p className="text-sm text-primary font-bold leading-snug mb-2">
+          Integra IA real en tu producto.
         </p>
         <p className="text-white text-sm font-medium leading-snug">
-          Integración de IA en tiempo real (GenAI, Whisper, visión por computadora) en sistemas web escalables.
+          Automatizada, escalable y lista para producción.
         </p>
       </motion.div>
 
