@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Brain, Zap, MessageCircle, Cloud, Settings2, type LucideIcon } from "lucide-react";
+import { Brain, Zap, MessageCircle, type LucideIcon } from "lucide-react";
 import { fadeIn, staggerContainer } from "../../lib/animations";
 
 const services: {
@@ -21,7 +21,7 @@ const services: {
     icon: MessageCircle,
     title: "Tu Negocio en Piloto Automático",
     desc: "Transformamos procesos manuales en sistemas inteligentes que trabajan por ti. Implementamos flujos de captura que conectan directamente con tu WhatsApp, permitiéndote recibir leads calificados y automatizar el llenado de formularios. Tu sitio deja de ser un folleto para convertirse en tu mejor vendedor, activo las 24 horas.",
-  }
+  },
 ];
 
 export default function Services() {
@@ -34,16 +34,12 @@ export default function Services() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-black tracking-[0.4em] uppercase text-primary mb-4">
+            <h2 className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] uppercase text-primary mb-4">
               El Proceso
             </h2>
             <h3 className="text-4xl md:text-5xl font-bold tracking-tight font-heading">
               Metodología de Precisión
             </h3>
-            <h2 className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] uppercase text-primary mb-4">
-              El Proceso
-            </h2>
-            <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Metodología de Precisión</h3>
           </motion.div>
           <motion.p
             className="text-tertiary max-w-md text-lg leading-relaxed"
@@ -69,30 +65,21 @@ export default function Services() {
               <motion.div
                 key={i}
                 variants={fadeIn}
-                className="flex flex-col p-8 md:p-10 bg-surface rounded-2xl group hover:bg-surface-high transition-all duration-500 border border-white/5 hover:border-white/10"
-              > 
-              <div className="flex flex-col gap-2 ">
-                <div className="flex justify-center items-center">
-                 <div className="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center mb-8 shrink-0 group-hover:scale-105 transition-transform duration-500">
-                   <Icon className="w-7 h-7 text-primary" strokeWidth={1.75} />
-                 </div>
+                className="flex flex-col p-8 md:p-10 bg-surface rounded-2xl group hover:bg-surface-high transition-colors duration-200 border border-white/5 hover:border-white/10"
+              >
+                <div className="flex flex-col gap-2">
+                  <div className="flex justify-center items-center">
+                    <div className="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center mb-8 shrink-0 group-hover:scale-105 transition-transform duration-200">
+                      <Icon className="w-7 h-7 text-primary" strokeWidth={1.75} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-bold font-heading tracking-tight mb-5">
+                    {item.title}
+                  </h4>
+                  <p className="text-tertiary text-sm md:text-[0.9375rem] leading-relaxed mt-auto">
+                    {item.desc}
+                  </p>
                 </div>
-                <h4 className="text-xl md:text-2xl font-bold font-heading tracking-tight mb-5">
-                  {item.title}
-                </h4>
-                <p className="text-tertiary font-sanstext-sm md:text-[0.9375rem] leading-relaxed mt-auto">
-                  {item.desc}
-                </p>
-          {services.map((item, i) => (
-            <motion.div
-              key={i}
-              variants={fadeIn}
-              className="p-10 bg-surface rounded-xl group hover:bg-surface-high transition-colors duration-200 border border-border"
-            >
-              <div className="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-200">
-                {item.icon}
-              </div>
-                
               </motion.div>
             );
           })}
