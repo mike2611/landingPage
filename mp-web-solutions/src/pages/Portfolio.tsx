@@ -28,13 +28,13 @@ export default function Portfolio() {
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           {/* Project cards go here */}
-          <div className="aspect-video bg-surface rounded-xl border border-white/5 flex items-center justify-center">
+          <div className="aspect-video bg-surface rounded-xl border border-border flex items-center justify-center">
             <span className="text-tertiary/40 text-sm font-medium tracking-widest uppercase">Próximamente</span>
           </div>
-          <div className="aspect-video bg-surface rounded-xl border border-white/5 flex items-center justify-center">
+          <div className="aspect-video bg-surface rounded-xl border border-border flex items-center justify-center">
             <span className="text-tertiary/40 text-sm font-medium tracking-widest uppercase">Próximamente</span>
           </div>
-          <div className="aspect-video bg-surface rounded-xl border border-white/5 flex items-center justify-center">
+          <div className="aspect-video bg-surface rounded-xl border border-border flex items-center justify-center">
             <span className="text-tertiary/40 text-sm font-medium tracking-widest uppercase">Próximamente</span>
           </div>
         </motion.div>

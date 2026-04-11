@@ -11,7 +11,7 @@ const services = [
   {
     icon: <Code2 className="w-8 h-8 text-primary" />,
     title: "Desarrollo de Precisión",
-    desc: "Código limpio y escalable utilizando Next.js and React para una velocidad de carga instantánea."
+    desc: "Código limpio y escalable con Next.js y React para una velocidad de carga instantánea."
   },
   {
     icon: <Smartphone className="w-8 h-8 text-primary" />,
@@ -30,7 +30,9 @@ export default function Services() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-black tracking-[0.4em] uppercase text-primary mb-4">El Proceso</h2>
+            <h2 className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] uppercase text-primary mb-4">
+              El Proceso
+            </h2>
             <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Metodología de Precisión</h3>
           </motion.div>
           <motion.p
@@ -54,9 +56,9 @@ export default function Services() {
             <motion.div
               key={i}
               variants={fadeIn}
-              className="p-10 bg-surface rounded-xl group hover:bg-surface-high transition-all duration-500 border border-white/5"
+              className="p-10 bg-surface rounded-xl group hover:bg-surface-high transition-colors duration-200 border border-border"
             >
-              <div className="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+              <div className="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-200">
                 {item.icon}
               </div>
               <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
