@@ -64,14 +64,22 @@ export default function Resume() {
                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
               </div>
-              <div className="space-y-2">
-                <p className="text-tertiary"><span className="text-primary">const</span> profile = {"{"}</p>
-                <p className="pl-4 text-tertiary">role: <span className="text-primary">"Líder Técnico & Arquitecto"</span>,</p>
-                <p className="pl-4 text-tertiary">experience: <span className="text-primary">"5+ years"</span>,</p>
-                <p className="pl-4 text-tertiary">cloud: [<span className="text-primary">"AWS CCP", "Azure AZ-900"</span>],</p>
-                <p className="pl-4 text-tertiary">specialization: <span className="text-primary">"Fintech & Banking Systems"</span>,</p>
-                <p className="pl-4 text-tertiary">standard: <span className="text-primary">"Enterprise Grade"</span></p>
-                <p className="text-tertiary">{"};"}</p>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-primary">{">"} whoami</p>
+                  <p className="text-white mt-1">Miguel &mdash; Tech Lead / Architect</p>
+                </div>
+                <div>
+                  <p className="text-primary">{">"} skills</p>
+                  <p className="text-tertiary mt-1">Cloud: <span className="text-white">AWS, Azure</span></p>
+                  <p className="text-tertiary">Frontend: <span className="text-white">React, Angular</span></p>
+                  <p className="text-tertiary">AI: <span className="text-white">Video pipelines</span></p>
+                </div>
+                <div>
+                  <p className="text-primary">{">"} experience</p>
+                  <p className="text-white mt-1">5+ años construyendo sistemas fintech</p>
+                </div>
+                <p className="text-primary animate-pulse">▊</p>
               </div>
             </div>
           </motion.div>
