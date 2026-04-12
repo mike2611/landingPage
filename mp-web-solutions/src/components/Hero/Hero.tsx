@@ -1,33 +1,40 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { MessageCircle, ArrowRight } from "lucide-react";
-import { fadeIn, staggerContainer } from "../../lib/animations";
+import { fadeIn, heroFadeIn, staggerContainer } from "../../lib/animations";
+import { opensInHttpTab, whatsappHref } from "../../lib/links";
 import heroImage from "../../assets/web-solutions-bk.webp";
 
 export default function Hero() {
+  const wa = whatsappHref();
+  const waNewTab = opensInHttpTab(wa);
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
 
       {/* Background image — bleeds right, fades left */}
-      <motion.div
-        className="absolute inset-y-0 right-0 w-full lg:w-[60%] z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <div className="absolute inset-y-0 end-0 w-full lg:w-[60%] z-0">
         <img
           src={heroImage}
-          alt="MP Web Solutions Dashboard Preview"
+          alt="Vista de panel web MP Web Solutions"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover object-left"
         />
-        {/* Fade from background on the left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        {/* Fade from background on the bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-        {/* Subtle top fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
-      </motion.div>
+        <motion.div
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
+        </motion.div>
+      </div>
 
-      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 py-24">
         <motion.div
           className="max-w-2xl"
@@ -36,13 +43,13 @@ export default function Hero() {
           variants={staggerContainer}
         >
           <motion.span
-            variants={fadeIn}
-            className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.3em] uppercase text-tertiary border border-tertiary/20 bg-surface/80"
+            variants={heroFadeIn}
+            className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-tertiary border border-tertiary/20 bg-surface/80"
           >
             MP WEB SOLUTIONS
           </motion.span>
           <motion.h1
-            variants={fadeIn}
+            variants={heroFadeIn}
             className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-8"
           >
             Soluciones web que convierten{" "}
@@ -55,31 +62,38 @@ export default function Hero() {
             Diseñamos experiencias digitales con precisión de arquitecto. Automatiza contactos y recibe mensajes directos por WhatsApp.
           </motion.p>
           <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-            <button className="flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_30px_rgba(231,99,84,0.4)] transition-all active:scale-95">
-              <MessageCircle className="w-5 h-5" />
+            <a
+              href={wa}
+              {...(waNewTab
+                ? { target: "_blank", rel: "noopener noreferrer" as const }
+                : {})}
+              className="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_30px_rgba(231,99,84,0.4)] transition-shadow duration-200 active:scale-[0.98]"
+            >
+              <MessageCircle className="w-5 h-5 shrink-0" aria-hidden />
               Contáctanos por WhatsApp
-            </button>
-            <button className="flex items-center justify-center gap-3 bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white/5 transition-all active:scale-95">
+            </a>
+            <Link
+              to="/portfolio"
+              className="inline-flex items-center justify-center gap-3 bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white/5 transition-colors duration-200 active:scale-[0.98]"
+            >
               Ver Portafolio
-              <ArrowRight className="w-5 h-5" />
-            </button>
+              <ArrowRight className="w-5 h-5 shrink-0" aria-hidden />
+            </Link>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Floating expertise card — bottom right */}
       <motion.div
-        className="absolute bottom-10 right-6 md:right-16 z-20 p-6 md:p-7 glass-panel rounded-2xl max-w-[min(100vw-3rem,20rem)] md:max-w-[22rem] border border-tertiary/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.45)]"
+        className="absolute bottom-10 end-6 md:end-16 z-20 p-6 md:p-7 glass-panel rounded-2xl max-w-[min(100vw-3rem,20rem)] md:max-w-[22rem] border border-tertiary/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.45)]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.6 }}
+        transition={{ delay: 0.8, duration: 0.3 }}
       >
-        <p className="font-heading text-[0.65rem] text-tertiary/80 font-semibold tracking-[0.22em] uppercase mb-3">
-          Especialidad
+        <p className="text-sm text-primary font-bold leading-snug mb-2">
+          Integra IA real en tu producto.
         </p>
-        <p className="font-heading text-[0.95rem] md:text-base text-white/95 font-semibold leading-snug tracking-tight">
-          Ingeniería de Ventas Digitales y{" "}
-          <span className="text-primary font-semibold">SEO Local</span>
+        <p className="text-white text-sm font-medium leading-snug">
+          Automatizada, escalable y lista para producción.
         </p>
       </motion.div>
 
