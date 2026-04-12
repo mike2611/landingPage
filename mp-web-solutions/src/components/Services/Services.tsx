@@ -14,19 +14,19 @@ const services: Service[] = [
     icon: Brain,
     title: "Experiencias de Alto Rendimiento que Convierten",
     desc: "Interfaces rápidas y optimizadas que convierten visitas en clientes.",
-    detail: "Velocidad de carga en segundos · Lighthouse 99+",
+    detail: "Velocidad de carga en segundos· Lighthouse",
   },
   {
     icon: Zap,
     title: "Seguridad y Estabilidad de Escala Global",
     desc: "Tu presencia respaldada por la misma tecnología que utilizan empresas internacionales.",
-    detail: "99.9% uptime garantizado · Arquitectura AWS",
+    detail: "Hasta 99.9% de uptime. Infraestructura AWS",
   },
   {
     icon: MessageCircle,
     title: "Tu Negocio en Piloto Automático",
     desc: "Transformamos procesos manuales en sistemas inteligentes que trabajan para ti.",
-    detail: "Leads directo a tu WhatsApp · Sin intermediarios",
+    detail: "Leads directo a tu WhatsApp.",
   },
 ];
 

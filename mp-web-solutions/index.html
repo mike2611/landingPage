@@ -3,14 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071108" />
     <meta
       name="description"
       content="MP Web Solutions — diseño y desarrollo web en Torreón. Sitios rápidos, SEO y captación de leads por WhatsApp."
     />
     <title>MP Web Solutions | Desarrollo web y experiencias digitales</title>
+    <link rel="canonical" href="https://mpwebsolutions.com" />
+
+    <!-- Preload LCP hero image so the browser fetches it during HTML parsing, not after JS -->
+    <link rel="preload" as="image" href="/images/hero.webp" type="image/webp" fetchpriority="high" />
+
+    <!-- Preconnect to WhatsApp API domain (CTA links) -->
+    <link rel="dns-prefetch" href="https://wa.me" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mpwebsolutions.com" />
     <meta property="og:title" content="MP Web Solutions | Desarrollo web y experiencias digitales" />
     <meta property="og:description" content="Diseño y desarrollo web en Torreón. Sitios rápidos, SEO y captación de leads por WhatsApp." />
     <meta property="og:locale" content="es_MX" />

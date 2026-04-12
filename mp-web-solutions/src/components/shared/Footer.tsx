@@ -26,7 +26,7 @@ export default function Footer() {
           </span>
         </div>
         <div className="text-tertiary/60 text-center md:text-start">
-          © {new Date().getFullYear()} MP Web Solutions. Built with Precision.
+          © {new Date().getFullYear()} MP Web Solutions
         </div>
         <nav
           className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-tertiary/60"

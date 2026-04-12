@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { fadeIn, heroFadeIn, staggerContainer } from "../../lib/animations";
 import { opensInHttpTab, whatsappHref } from "../../lib/links";
-import heroImage from "../../assets/web-solutions-bk.webp";
 
 export default function Hero() {
   const wa = whatsappHref();
@@ -15,7 +14,7 @@ export default function Hero() {
       {/* Background image — bleeds right, fades left */}
       <div className="absolute inset-y-0 end-0 w-full lg:w-[60%] z-0">
         <img
-          src={heroImage}
+          src="/images/hero.webp"
           alt="Vista de panel web MP Web Solutions"
           fetchPriority="high"
           decoding="async"
@@ -23,16 +22,9 @@ export default function Hero() {
           height={1080}
           className="w-full h-full object-cover object-left"
         />
-        <motion.div
-          className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
-        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 py-24">

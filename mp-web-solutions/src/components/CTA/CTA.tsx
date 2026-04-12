@@ -29,7 +29,7 @@ export default function CTA() {
             {...(waNewTab
               ? { target: "_blank", rel: "noopener noreferrer" as const }
               : {})}
-            className="inline-flex text-primary items-center justify-center bg-primary text-white px-12 py-6 rounded-lg text-xl font-bold hover:shadow-[0_20px_60px_rgba(231,99,84,0.3)] transition-shadow duration-200 active:scale-[0.98]"
+            className="inline-flex items-center justify-center bg-primary text-white px-12 py-6 rounded-lg text-xl font-bold hover:shadow-[0_20px_60px_rgba(231,99,84,0.3)] transition-shadow duration-200 active:scale-[0.98]"
           >
             Comienza tu Proyecto
           </a>
