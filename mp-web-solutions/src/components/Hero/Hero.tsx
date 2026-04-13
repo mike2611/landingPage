@@ -17,7 +17,7 @@ export default function Hero() {
           src="/images/hero.webp"
           alt="Vista de panel web MP Web Solutions"
           fetchPriority="high"
-          decoding="async"
+          decoding="sync"
           width={1920}
           height={1080}
           className="w-full h-full object-cover object-left"
@@ -51,7 +51,7 @@ export default function Hero() {
             variants={fadeIn}
             className="text-lg md:text-xl text-tertiary max-w-lg font-light leading-relaxed mb-10"
           >
-            Diseñamos experiencias digitales con precisión de arquitecto. Automatiza contactos y recibe mensajes directos por WhatsApp.
+            Diseño y despliego arquitecturas digitales enfocadas en rendimiento. Construyo sistemas que automatizan la captación de clientes en WhatsApp.
           </motion.p>
           <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
             <a
@@ -62,7 +62,7 @@ export default function Hero() {
               className="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_30px_rgba(231,99,84,0.4)] transition-shadow duration-200 active:scale-[0.98]"
             >
               <MessageCircle className="w-5 h-5 shrink-0" aria-hidden />
-              Contáctanos por WhatsApp
+              Cuéntame tu proyecto
             </a>
             <Link
               to="/portfolio"
@@ -85,7 +85,8 @@ export default function Hero() {
           Integra IA real en tu producto.
         </p>
         <p className="text-white text-sm font-medium leading-snug">
-          Automatizada, escalable y lista para producción.
+        Automatización real para tu negocio
+        Escalable, integrada y lista para producción.
         </p>
       </motion.div>
 

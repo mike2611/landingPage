@@ -16,7 +16,7 @@ export default function CTA() {
           viewport={{ once: true }}
         >
           <ChevronRight className="inline-block text-primary font-heading w-12 h-12 md:w-20 md:h-20 align-middle" aria-hidden />{" "}
-          Haz crecer tu negocio con una <br className="hidden md:block" /> página web profesional
+          Convierte tu sitio en un sistema web automatizado
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
@@ -31,7 +31,7 @@ export default function CTA() {
               : {})}
             className="inline-flex items-center justify-center bg-primary text-white px-12 py-6 rounded-lg text-xl font-bold hover:shadow-[0_20px_60px_rgba(231,99,84,0.3)] transition-shadow duration-200 active:scale-[0.98]"
           >
-            Comienza tu Proyecto
+            Cuéntame tu proyecto
           </a>
         </motion.div>
       </div>

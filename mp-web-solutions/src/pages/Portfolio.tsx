@@ -28,10 +28,9 @@ const projects: Project[] = [
   {
     icon: Gauge,
     tag: "Performance",
-    title: "Ingeniería de Carga Instantánea",
-    desc: "Mientras el estándar carga en 5 segundos, nuestra arquitectura entrega experiencias en menos de 1 segundo. Cero fricción, máxima retención.",
-    stack: ["Vite", "React 19", "Tailwind 4"],
-    metric: { value: "99+", label: "Lighthouse Score · Zero CLS" },
+    title: "Ingeniería enfocada en rendimiento",
+    desc: "Arquitecturas optimizadas para tiempos de carga rápidos y una experiencia fluida desde el primer acceso.",
+    stack: ["Vite", "React", "Tailwind"],
     colSpan: "lg:col-span-1 lg:col-start-3 lg:row-start-1",
     image: bgLighthouse,
   },
@@ -39,8 +38,8 @@ const projects: Project[] = [
     icon: Bot,
     tag: "AI & Multimedia",
     title: "Orquestación de Medios AI",
-    desc: "Arquitectura asíncrona que coordina múltiples modelos de lenguaje y visión para generar contenido de alta fidelidad. Un flujo de trabajo agentic que transforma prompts en activos visuales profesionales en segundos.",
-    stack: ["FastAPI", "Groq", "Replicate", "AWS"],
+    desc: "Generación automatizada de contenido visual con múltiples modelos. Producción en segundos, no minutos.",
+    stack: ["FastAPI", "Groq", "Replicate"],
     colSpan: "lg:col-span-2 lg:col-start-1 lg:row-start-1",
     video: aiGenVideo,
     poster: posterVideoGen,
@@ -49,7 +48,7 @@ const projects: Project[] = [
     icon: ScanEye,
     tag: "Computer Vision",
     title: "Visión Artificial Agroindustrial",
-    desc: "Agente inteligente para el monitoreo preventivo de ganado. Implementación de modelos YOLO para la detección de patrones de alimentación y comportamiento en tiempo real, optimizando la salud animal en el sector Laguna.",
+    desc: "Monitoreo de ganado en tiempo real con modelos YOLO. Detección automática de patrones y comportamiento.",
     stack: ["Python", "YOLO", "Cloud Storage"],
     colSpan: "lg:col-span-1",
     video: cattleVideo,
@@ -59,9 +58,9 @@ const projects: Project[] = [
     icon: Workflow,
     tag: "Process Automation",
     title: "Infraestructura en Piloto Automático",
-    desc: "Eliminamos el cuello de botella manual de tu negocio. Diseñamos flujos que conectan tu sitio web directamente con tu WhatsApp y CRM, asegurando que ningún lead se pierda y que tu equipo se enfoque solo en cerrar ventas.",
-    extra: "Sistemas autogestionables que reducen el error humano en un 80%.",
-    stack: ["n8n", "Webhooks", "WhatsApp API"],
+    desc: "Automatización de flujos conectados a WhatsApp y web. Captura y gestión de leads sin intervención manual.",
+    extra: "Sistemas autogestionables.",
+    stack: ["Webhooks", "WhatsApp API"],
     colSpan: "lg:col-span-2",
     image: bgAutomation,
   },
@@ -170,7 +169,7 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center shrink-0">
           <Icon className="w-6 h-6 text-primary" strokeWidth={1.75} aria-hidden />
         </div>
-        <span className="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-tertiary/70 border border-border px-3 py-1 rounded-full whitespace-nowrap">
+        <span className="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-tertiary border border-tertiary/25 bg-tertiary/10 px-3 py-1 rounded-full whitespace-nowrap backdrop-blur-sm">
           {project.tag}
         </span>
       </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, MessageCircle, Network, X } from "lucide-react";
+import { Calendar, Menu, MessageCircle, Network, X } from "lucide-react";
 import { opensInHttpTab, whatsappHref } from "../../lib/links";
 
 const navClass =
@@ -68,8 +68,8 @@ export default function Navbar() {
               : {})}
             className="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold tracking-wide hover:opacity-95 transition-opacity duration-200 active:scale-[0.98]"
           >
-            <MessageCircle className="w-4 h-4 shrink-0" aria-hidden />
-            WhatsApp
+            <Calendar className="w-4 h-4 shrink-0" aria-hidden /> 
+            Agendar Consulta
           </a>
 
           <button

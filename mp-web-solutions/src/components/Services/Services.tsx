@@ -13,19 +13,19 @@ const services: Service[] = [
   {
     icon: Brain,
     title: "Experiencias de Alto Rendimiento que Convierten",
-    desc: "Interfaces rápidas y optimizadas que convierten visitas en clientes.",
-    detail: "Velocidad de carga en segundos· Lighthouse",
+    desc: "Diseño interfaces rápidas y optimizadas que mejoran la experiencia y la conversión.",
+    detail: "Velocidad de carga en segundos.",
   },
   {
     icon: Zap,
     title: "Seguridad y Estabilidad de Escala Global",
-    desc: "Tu presencia respaldada por la misma tecnología que utilizan empresas internacionales.",
+    desc: "Tu presencia respaldada por la misma tecnología que utilizan empresas internacionales. Infraestructura en la nube para escalabilidad y disponibilidad.",
     detail: "Hasta 99.9% de uptime. Infraestructura AWS",
   },
   {
     icon: MessageCircle,
     title: "Tu Negocio en Piloto Automático",
-    desc: "Transformamos procesos manuales en sistemas inteligentes que trabajan para ti.",
+    desc: "Elimino cuellos de botella manuales y automatizo procesos clave.",
     detail: "Leads directo a tu WhatsApp.",
   },
 ];
@@ -53,8 +53,7 @@ export default function Services() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            No solo creamos sitios; construimos infraestructuras digitales
-            diseñadas para el crecimiento sostenido y la captura de leads.
+            No solo diseño sitios; desarrollo sistemas digitales escalables enfocados en crecimiento y captación de leads.
           </motion.p>
         </div>
 
