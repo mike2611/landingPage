@@ -61,16 +61,13 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={wa}
-            {...(waNewTab
-              ? { target: "_blank", rel: "noopener noreferrer" as const }
-              : {})}
+          <Link
+            to="/agendar"
             className="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold tracking-wide hover:opacity-95 transition-opacity duration-200 active:scale-[0.98]"
           >
-            <Calendar className="w-4 h-4 shrink-0" aria-hidden /> 
+            <Calendar className="w-4 h-4 shrink-0" aria-hidden />
             Agendar Consulta
-          </a>
+          </Link>
 
           <button
             type="button"

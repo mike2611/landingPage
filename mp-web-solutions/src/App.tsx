@@ -7,6 +7,7 @@ import HashScroll from "./components/shared/HashScroll";
 import Home from "./pages/Home";
 
 const Portfolio = lazy(() => import("./pages/Portfolio"));
+const Schedule = lazy(() => import("./pages/Schedule"));
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/portfolio" element={<Suspense fallback={null}><Portfolio /></Suspense>} />
+              <Route path="/agendar" element={<Suspense fallback={null}><Schedule /></Suspense>} />
             </Routes>
           </main>
           <Footer />
