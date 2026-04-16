@@ -21,6 +21,10 @@ export default function Navbar() {
 
   const linkMobile = `${navClass} text-lg py-1`;
 
+  const isServices = location.hash === '#services';
+  const isResume = location.hash === '#resume';
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="flex justify-between items-center px-6 md:px-12 py-6 max-w-7xl mx-auto">
@@ -38,20 +42,22 @@ export default function Navbar() {
           <NavLink
             to="/"
             end
+            onClick={scrollToTop}
             className={({ isActive }) =>
-              isActive ? `${navActive} font-semibold` : navClass
+              isActive && !isServices && !isResume ? `${navActive} font-semibold` : navClass
             }
           >
             INICIO
           </NavLink>
-          <Link to="/#services" className={navClass}>
+          <Link to="/#services" className={isServices ? `${navActive} font-semibold` : navClass}>
             SERVICIOS
           </Link>
-          <Link to="/#resume" className={navClass}>
+          <Link to="/#resume" className={isResume ? `${navActive} font-semibold` : navClass}>
             TRAYECTORIA
           </Link>
           <NavLink
             to="/portfolio"
+            onClick={scrollToTop}
             className={({ isActive }) =>
               isActive ? `${navActive} font-semibold` : navClass
             }
@@ -63,6 +69,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             to="/agendar"
+            onClick={scrollToTop}
             className="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold tracking-wide hover:opacity-95 transition-opacity duration-200 active:scale-[0.98]"
           >
             <Calendar className="w-4 h-4 shrink-0" aria-hidden />
@@ -89,7 +96,7 @@ export default function Navbar() {
       {menuOpen ? (
         <div
           id="mobile-nav"
-          className="md:hidden fixed inset-x-0 top-24 bottom-0 z-40 bg-background/98 backdrop-blur-md border-t border-border px-6 py-8 flex flex-col gap-6"
+          className="md:hidden absolute inset-x-0 top-full h-screen z-40 bg-background/98 backdrop-blur-md border-t border-border px-6 py-8 flex flex-col gap-6"
           role="dialog"
           aria-modal="true"
           aria-label="Navegación móvil"
@@ -97,20 +104,22 @@ export default function Navbar() {
           <NavLink
             to="/"
             end
+            onClick={scrollToTop}
             className={({ isActive }) =>
               isActive ? `${navActive} text-lg py-1 font-semibold` : linkMobile
             }
           >
             INICIO
           </NavLink>
-          <Link to="/#services" className={linkMobile} onClick={() => setMenuOpen(false)}>
+          <Link to="/#services" className={isServices ? `${navActive} text-lg py-1 font-semibold` : linkMobile} onClick={() => setMenuOpen(false)}>
             SERVICIOS
           </Link>
-          <Link to="/#resume" className={linkMobile} onClick={() => setMenuOpen(false)}>
+          <Link to="/#resume" className={isResume ? `${navActive} text-lg py-1 font-semibold` : linkMobile} onClick={() => setMenuOpen(false)}>
             TRAYECTORIA
           </Link>
           <NavLink
             to="/portfolio"
+            onClick={scrollToTop}
             className={({ isActive }) =>
               isActive ? `${navActive} text-lg py-1 font-semibold` : linkMobile
             }
