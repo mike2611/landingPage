@@ -30,6 +30,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center px-6 md:px-12 py-6 max-w-7xl mx-auto">
         <Link
           to="/"
+          onClick={scrollToTop}
           className="flex items-center gap-3 min-w-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <Network className="text-primary w-8 h-8 shrink-0" aria-hidden />
