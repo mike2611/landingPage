@@ -29,29 +29,23 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 py-24">
         <motion.div
-          className="max-w-2xl"
+          className="max-w-3xl"
           initial="initial"
           animate="animate"
           variants={staggerContainer}
         >
-          <motion.span
-            variants={heroFadeIn}
-            className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-tertiary border border-tertiary/20 bg-surface/80"
-          >
-            MP WEB SOLUTIONS
-          </motion.span>
+
           <motion.h1
             variants={heroFadeIn}
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-8"
+            className="font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.08] tracking-tight text-balance mb-8"
           >
-            Soluciones web que convierten{" "}
-            <span className="text-primary">visitas en clientes.</span>
+            Sistemas de automatización para escalar tu negocio.
           </motion.h1>
           <motion.p
             variants={fadeIn}
             className="text-lg md:text-xl text-tertiary max-w-lg font-light leading-relaxed mb-10"
           >
-            Diseño y despliego arquitecturas digitales enfocadas en rendimiento. Construyo sistemas que automatizan la captación de clientes en WhatsApp.
+            Diseño sistemas digitales que eliminan cuellos de botella y convierten visitas en clientes — desde tu web hasta el seguimiento automatizado.
           </motion.p>
           <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
             <a
@@ -85,8 +79,7 @@ export default function Hero() {
           Integra IA real en tu producto.
         </p>
         <p className="text-white text-sm font-medium leading-snug">
-        Automatización real para tu negocio
-        Escalable, integrada y lista para producción.
+          Convierte procesos manuales en flujos automatizados que realmente generan ingresos.
         </p>
       </motion.div>
 

@@ -11,22 +11,22 @@ type Service = {
 
 const services: Service[] = [
   {
+    icon: MessageCircle,
+    title: "Tu Negocio en Piloto Automático",
+    desc: "Audito los procesos de tu negocio para identificar cuellos de botella reales y determinar qué automatizar y qué no.",
+    detail: "Leads directo a tu WhatsApp.",
+  },
+  {
     icon: Brain,
-    title: "Experiencias de Alto Rendimiento que Convierten",
+    title: "Experiencias Digitales de Alto Rendimiento",
     desc: "Diseño interfaces rápidas y optimizadas que mejoran la experiencia y la conversión.",
     detail: "Velocidad de carga en segundos.",
   },
   {
     icon: Zap,
-    title: "Seguridad y Estabilidad de Escala Global",
+    title: "Seguridad y Estabilidad a Escala Global",
     desc: "Tu presencia respaldada por la misma tecnología que utilizan empresas internacionales. Infraestructura en la nube para escalabilidad y disponibilidad.",
     detail: "Hasta 99.9% de uptime. Infraestructura AWS",
-  },
-  {
-    icon: MessageCircle,
-    title: "Tu Negocio en Piloto Automático",
-    desc: "Elimino cuellos de botella manuales y automatizo procesos clave.",
-    detail: "Leads directo a tu WhatsApp.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function Services() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] uppercase text-primary mb-4">
+            <p className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] text-primary mb-4">
               El Proceso
             </p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-heading">
@@ -99,7 +99,7 @@ export default function Services() {
                 </h3>
 
                 {/* Default desc */}
-                <p className="text-tertiary text-sm md:text-[0.9375rem] leading-relaxed">
+                <p className="text-tertiary text-sm md:text-[1rem] leading-relaxed">
                   {item.desc}
                 </p>
 
