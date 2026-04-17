@@ -6,19 +6,13 @@ export default function Schedule() {
   return (
     <>
       {/* Header */}
-      <section className="py-20 px-6 md:px-12">
+      <section className="pt-15 pb-10 px-6 md:px-12">
         <motion.div
           className="max-w-3xl mx-auto text-center"
           initial="initial"
           animate="animate"
           variants={staggerContainer}
         >
-          <motion.span
-            variants={heroFadeIn}
-            className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-tertiary border border-tertiary/20 bg-surface/80"
-          >
-            AGENDAR CONSULTA
-          </motion.span>
           <motion.h1
             variants={heroFadeIn}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-6"

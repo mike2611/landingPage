@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
 import { CheckCircle2, FileText } from "lucide-react";
-import { resumeDownloadHref } from "../../lib/links";
+import { opensInHttpTab, resumePublicHref } from "../../lib/links";
 
 const highlights = [
   "Experiencia liderando desarrollo en plataformas financieras. ",
@@ -28,7 +27,9 @@ const stackLayers = [
 ];
 
 export default function Resume() {
-  const resumePdf = resumeDownloadHref();
+  const resumeUrl = resumePublicHref();
+  const resumeHref = resumeUrl ?? "#resume";
+  const openInNewTab = resumeUrl && opensInHttpTab(resumeUrl);
 
   return (
     <section className="py-32 px-6 md:px-12 overflow-hidden" id="resume">
@@ -51,27 +52,16 @@ export default function Resume() {
             </ul>
             <div className="flex justify-center">
               <div className="btn-gradient-border group">
-                {resumePdf ? (
-                  <a
-                    href={resumePdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-4 bg-surface-high text-white px-8 py-5 rounded-[7px] hover:bg-surface transition-colors duration-200 font-bold"
-                  >
-                    <FileText className="group-hover:rotate-12 transition-transform duration-200" aria-hidden />
-                    Descargar CV (PDF)
-                  </a>
-                ) : (
-                  <Link
-                    to="https://miguelpuentes.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-4 bg-surface-high text-white px-8 py-5 rounded-[7px] hover:bg-surface transition-colors duration-200 font-bold"
-                  >
-                    <FileText className="group-hover:rotate-12 transition-transform duration-200" aria-hidden />
-                    Ver trayectoria
-                  </Link>
-                )}
+                <a
+                  href={resumeHref}
+                  {...(openInNewTab
+                    ? { target: "_blank", rel: "noopener noreferrer" as const }
+                    : {})}
+                  className="inline-flex items-center gap-4 bg-surface-high text-white px-8 py-5 rounded-[7px] hover:bg-surface transition-colors duration-200 font-bold"
+                >
+                  <FileText className="group-hover:rotate-12 transition-transform duration-200" aria-hidden />
+                  Ver trayectoria
+                </a>
               </div>
             </div>
           </motion.div>

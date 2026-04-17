@@ -23,7 +23,7 @@ export function mailtoConsultHref(): string {
   return `mailto:${email}?subject=${subject}`;
 }
 
-export function resumeDownloadHref(): string | undefined {
+export function resumePublicHref(): string | undefined {
   const url = import.meta.env.VITE_RESUME_URL?.trim();
   return url || undefined;
 }

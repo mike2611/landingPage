@@ -5,7 +5,7 @@ import {
   linkedinHref,
   mailtoConsultHref,
   opensInHttpTab,
-  resumeDownloadHref,
+  resumePublicHref,
   whatsappHref,
 } from "../../lib/links";
 
@@ -13,7 +13,7 @@ export default function Footer() {
   const wa = whatsappHref();
   const waNewTab = opensInHttpTab(wa);
   const mail = mailtoConsultHref();
-  const resumeUrl = resumeDownloadHref();
+  const resumeUrl = resumePublicHref();
   const linkedIn = linkedinHref();
   const gh = githubHref();
 
