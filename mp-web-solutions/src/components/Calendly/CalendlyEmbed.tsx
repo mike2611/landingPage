@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const CALENDLY_URL =
-  "https://calendly.com/mpuentes2611/30min?background_color=151e16&text_color=e5e8ee&primary_color=c7dbe6";
+  "https://calendly.com/mpuentes2611/30min?background_color=151e16&text_color=c7dbe6&primary_color=e76354";
 
 export default function CalendlyEmbed() {
   useEffect(() => {
@@ -15,10 +15,12 @@ export default function CalendlyEmbed() {
   }, []);
 
   return (
-    <div
-      className="calendly-inline-widget w-full"
-      data-url={CALENDLY_URL}
-      style={{ minWidth: "320px", height: "700px" }}
-    />
+    <div className="w-full rounded-2xl overflow-hidden border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+      <div
+        className="calendly-inline-widget w-full"
+        data-url={CALENDLY_URL}
+        style={{ minWidth: "320px", height: "800px" }}
+      />
+    </div>
   );
 }
