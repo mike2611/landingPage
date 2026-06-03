@@ -57,9 +57,9 @@ export default function Resume() {
                   {...(openInNewTab
                     ? { target: "_blank", rel: "noopener noreferrer" as const }
                     : {})}
-                  className="inline-flex items-center gap-4 bg-surface-high text-white px-8 py-5 rounded-[7px] hover:bg-surface transition-colors duration-200 font-bold"
+                  className="inline-flex items-center justify-center gap-4 text-white px-8 py-5 min-h-16 rounded-[calc(0.5rem-1px)] transition-colors duration-200 font-bold leading-none whitespace-nowrap"
                 >
-                  <FileText className="group-hover:rotate-12 transition-transform duration-200" aria-hidden />
+                  <FileText className="w-5 h-5 shrink-0 group-hover:rotate-12 transition-transform duration-200" aria-hidden />
                   Ver trayectoria
                 </a>
               </div>
