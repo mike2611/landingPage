@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Calendar, Menu, MessageCircle, Network, X } from "lucide-react";
-import { opensInHttpTab, whatsappHref } from "../../lib/links";
+import { Calendar, Menu, Network, X } from "lucide-react";
 
 const navClass =
-  "text-tertiary font-medium hover:text-primary transition-colors duration-200";
+  "text-white/90 font-semibold tracking-wide hover:text-primary transition-colors duration-200";
 
-const navActive = "text-primary";
+const navActive = "text-primary font-bold";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,58 +15,44 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [location.pathname, location.hash]);
 
-  const wa = whatsappHref();
-  const waNewTab = opensInHttpTab(wa);
-
   const linkMobile = `${navClass} text-lg py-1`;
-
-  const isServices = location.hash === '#services';
-  const isResume = location.hash === '#resume';
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
-      <div className="flex justify-between items-center px-6 md:px-12 py-6 max-w-7xl mx-auto">
-        <Link
-          to="/"
-          onClick={scrollToTop}
-          className="flex items-center gap-3 min-w-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-        >
-          <Network className="text-primary w-8 h-8 shrink-0" aria-hidden />
-          <span className="text-lg font-bold tracking-[0.2em] uppercase truncate">
-            MP Web Solutions
-          </span>
-        </Link>
-
-        <nav className="hidden md:flex items-center gap-10" aria-label="Principal">
-          <NavLink
+      <div className="flex items-center px-6 md:px-12 py-6 max-w-7xl mx-auto">
+        <div className="flex items-center gap-8 md:gap-12 min-w-0">
+          <Link
             to="/"
-            end
             onClick={scrollToTop}
-            className={({ isActive }) =>
-              isActive && !isServices && !isResume ? `${navActive} font-semibold` : navClass
-            }
+            className="flex items-center gap-3 min-w-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            INICIO
-          </NavLink>
-          <Link to="/#services" className={isServices ? `${navActive} font-semibold` : navClass}>
-            SERVICIOS
+            <Network className="text-primary w-8 h-8 shrink-0" aria-hidden />
+            <span className="text-lg font-bold tracking-[0.2em] uppercase truncate">
+              MP Web Solutions
+            </span>
           </Link>
-          <Link to="/#resume" className={isResume ? `${navActive} font-semibold` : navClass}>
-            TRAYECTORIA
-          </Link>
-          <NavLink
-            to="/portfolio"
-            onClick={scrollToTop}
-            className={({ isActive }) =>
-              isActive ? `${navActive} font-semibold` : navClass
-            }
-          >
-            PORTAFOLIO
-          </NavLink>
-        </nav>
 
-        <div className="flex items-center gap-3">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Principal">
+            <NavLink
+              to="/"
+              end
+              onClick={scrollToTop}
+              className={({ isActive }) => (isActive ? navActive : navClass)}
+            >
+              INICIO
+            </NavLink>
+            <NavLink
+              to="/portfolio"
+              onClick={scrollToTop}
+              className={({ isActive }) => (isActive ? navActive : navClass)}
+            >
+              PORTAFOLIO
+            </NavLink>
+          </nav>
+        </div>
+
+        <div className="flex items-center gap-3 ml-auto">
           <Link
             to="/agendar"
             onClick={scrollToTop}
@@ -112,12 +97,6 @@ export default function Navbar() {
           >
             INICIO
           </NavLink>
-          <Link to="/#services" className={isServices ? `${navActive} text-lg py-1 font-semibold` : linkMobile} onClick={() => setMenuOpen(false)}>
-            SERVICIOS
-          </Link>
-          <Link to="/#resume" className={isResume ? `${navActive} text-lg py-1 font-semibold` : linkMobile} onClick={() => setMenuOpen(false)}>
-            TRAYECTORIA
-          </Link>
           <NavLink
             to="/portfolio"
             onClick={scrollToTop}
@@ -127,17 +106,14 @@ export default function Navbar() {
           >
             PORTAFOLIO
           </NavLink>
-          <a
-            href={wa}
-            {...(waNewTab
-              ? { target: "_blank", rel: "noopener noreferrer" as const }
-              : {})}
-            className="mt-auto inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-4 rounded-lg text-base font-bold tracking-wide"
+          <Link
+            to="/agendar"
             onClick={() => setMenuOpen(false)}
+            className="mt-auto inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-4 rounded-lg text-base font-bold tracking-wide"
           >
-            <MessageCircle className="w-5 h-5 shrink-0" aria-hidden />
-            WhatsApp
-          </a>
+            <Calendar className="w-5 h-5 shrink-0" aria-hidden />
+            Agendar Consulta
+          </Link>
         </div>
       ) : null}
     </header>
