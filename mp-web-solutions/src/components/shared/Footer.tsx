@@ -4,14 +4,10 @@ import {
   githubHref,
   linkedinHref,
   mailtoConsultHref,
-  opensInHttpTab,
   resumePublicHref,
-  whatsappHref,
 } from "../../lib/links";
 
 export default function Footer() {
-  const wa = whatsappHref();
-  const waNewTab = opensInHttpTab(wa);
   const mail = mailtoConsultHref();
   const resumeUrl = resumePublicHref();
   const linkedIn = linkedinHref();
@@ -49,15 +45,6 @@ export default function Footer() {
               Trayectoria
             </Link>
           )}
-          <a
-            href={wa}
-            {...(waNewTab
-              ? { target: "_blank", rel: "noopener noreferrer" as const }
-              : {})}
-            className="hover:text-white transition-colors duration-200"
-          >
-            WhatsApp
-          </a>
           <a href={mail} className="hover:text-white transition-colors duration-200">
             <Mail className="w-4 h-4 inline me-1 align-text-bottom" aria-hidden />
             Email
