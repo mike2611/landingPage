@@ -1,13 +1,9 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 import { fadeIn, heroFadeIn, staggerContainer } from "../../lib/animations";
-import { opensInHttpTab, whatsappHref } from "../../lib/links";
 
 export default function Hero() {
-  const wa = whatsappHref();
-  const waNewTab = opensInHttpTab(wa);
-
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
 
@@ -48,16 +44,13 @@ export default function Hero() {
             Diseño sistemas digitales que eliminan cuellos de botella y convierten visitas en clientes — desde tu web hasta el seguimiento automatizado.
           </motion.p>
           <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={wa}
-              {...(waNewTab
-                ? { target: "_blank", rel: "noopener noreferrer" as const }
-                : {})}
+            <Link
+              to="/agendar"
               className="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_30px_rgba(231,99,84,0.4)] transition-shadow duration-200 active:scale-[0.98]"
             >
-              <MessageCircle className="w-5 h-5 shrink-0" aria-hidden />
-              Cuéntame tu proyecto
-            </a>
+              <Calendar className="w-5 h-5 shrink-0" aria-hidden />
+              Agenda tu consulta
+            </Link>
             <Link
               to="/portfolio"
               className="inline-flex items-center justify-center gap-3 bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white/5 transition-colors duration-200 active:scale-[0.98]"

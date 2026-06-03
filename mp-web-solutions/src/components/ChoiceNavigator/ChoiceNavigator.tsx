@@ -48,9 +48,10 @@ export default function ChoiceNavigator() {
           <Link
             to="/products"
             className="flex items-center gap-2 py-3 px-8 rounded-full text-sm font-semibold
-                       bg-primary text-white hover:opacity-90 active:scale-[0.98]
-                       transition-all duration-150
-                       shadow-[0_0_30px_rgba(231,99,84,0.4)]"
+                       border border-white/15 text-tertiary
+                       hover:border-white/25 hover:text-white hover:bg-white/5
+                       transition-all duration-200 active:scale-[0.98]
+                       backdrop-blur-sm"
           >
             Ve los productos
             <ArrowRight className="w-4 h-4" strokeWidth={2} aria-hidden />
@@ -91,10 +92,9 @@ export default function ChoiceNavigator() {
           <Link
             to="/consulting"
             className="flex items-center gap-2 py-3 px-8 rounded-full text-sm font-semibold
-                       border border-white/20 text-white
-                       hover:border-primary/40 hover:bg-surface-high
-                       transition-all duration-200 active:scale-[0.98]
-                       backdrop-blur-sm"
+                       bg-primary text-white hover:opacity-90 active:scale-[0.98]
+                       transition-all duration-150
+                       shadow-[0_0_30px_rgba(231,99,84,0.4)]"
           >
             Conoce el proceso
             <ArrowRight className="w-4 h-4" strokeWidth={2} aria-hidden />

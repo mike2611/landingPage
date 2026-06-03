@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
+import BackLink from "../components/shared/BackLink";
 import { staggerContainer } from "../lib/animations";
 import { products, type Product } from "../config/products";
 
@@ -89,15 +90,7 @@ export default function Products() {
     <section className="py-24 px-6 md:px-12 bg-background min-h-screen">
       <div className="max-w-4xl mx-auto">
 
-        {/* Back link */}
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-tertiary/60 hover:text-tertiary
-                     text-sm transition-colors duration-150 mb-12"
-        >
-          <ArrowLeft className="w-4 h-4" strokeWidth={2} />
-          Back to Home
-        </Link>
+        <BackLink to="/" label="Back to Home" />
 
         {/* Header */}
         <motion.div
