@@ -5,77 +5,110 @@ import { fadeIn, heroFadeIn, staggerContainer } from "../../lib/animations";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-
-      {/* Background image — bleeds right, fades left */}
-      <div className="absolute inset-y-0 end-0 w-full lg:w-[60%] z-0">
+    <section className="relative overflow-hidden -mt-24 pt-24 min-h-screen flex">
+      {/* Full-width hero background (21:9) */}
+      <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero.webp"
-          alt="Vista de panel web MP Web Solutions"
+          src="/images/bg_hero_2.jpg"
+          alt=""
           fetchPriority="high"
-          decoding="sync"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover object-left"
+          decoding="async"
+          width={3024}
+          height={1296}
+          sizes="100vw"
+          className="absolute inset-0 h-full w-full object-cover object-[45%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 py-24">
+      {/* ── Foreground content ───────────────────────────────── */}
+      <motion.div
+        className="relative z-10 w-full grid lg:grid-cols-[1.15fr_0.85fr] items-center lg:items-stretch gap-8 lg:gap-12 px-6 sm:px-10 lg:px-16 py-12 min-h-[calc(100vh-6rem)]"
+        initial="initial"
+        animate="animate"
+        variants={staggerContainer}
+      >
+        {/* Floating panel — Consultoría */}
         <motion.div
-          className="max-w-3xl"
-          initial="initial"
-          animate="animate"
-          variants={staggerContainer}
+          variants={fadeIn}
+          className="relative flex w-full min-h-[28rem] flex-col justify-between bg-surface border border-white/10 rounded-[1.75rem] px-10 sm:px-14 lg:px-16 xl:px-20 py-16 lg:min-h-[calc(100vh-11rem)] lg:py-20 xl:py-24 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.85)] lg:max-w-none"
         >
+          <div className="flex flex-1 flex-col justify-center gap-8 sm:gap-9 lg:gap-10 xl:gap-12">
+            <div className="flex items-center gap-1.5" aria-hidden>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span className="w-1.5 h-1.5 rounded-full bg-tertiary/60" />
+              <span className="w-1.5 h-1.5 rounded-full bg-tertiary/30" />
+            </div>
 
-          <motion.h1
-            variants={heroFadeIn}
-            className="font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.08] tracking-tight text-balance mb-8"
-          >
-            Sistemas de automatización para escalar tu negocio.
-          </motion.h1>
-          <motion.p
-            variants={fadeIn}
-            className="text-lg md:text-xl text-tertiary max-w-lg font-light leading-relaxed mb-10"
-          >
-            Diseño sistemas digitales que eliminan cuellos de botella y convierten visitas en clientes — desde tu web hasta el seguimiento automatizado.
-          </motion.p>
-          <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-            <Link
-              to="/agendar"
-              className="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_30px_rgba(231,99,84,0.4)] transition-shadow duration-200 active:scale-[0.98]"
+            <motion.h1
+              variants={heroFadeIn}
+              className="font-heading text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.06] xl:text-6xl 2xl:text-7xl font-extrabold text-white tracking-tight text-balance"
             >
-              <Calendar className="w-5 h-5 shrink-0" aria-hidden />
-              Agenda tu consulta
-            </Link>
+              Sistemas de automatización para{" "}
+              <span className="italic font-bold text-white">escalar tu negocio</span>.
+            </motion.h1>
+
+            <p className="text-base md:text-lg lg:text-xl text-tertiary font-light leading-relaxed lg:leading-relaxed">
+              Diseño sistemas digitales que eliminan cuellos de botella y
+              convierten visitas en clientes — desde tu web hasta el seguimiento
+              automatizado.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-5 pt-2">
+              <Link
+                to="/agendar"
+                className="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 lg:px-9 lg:py-4 rounded-full font-bold text-base lg:text-lg hover:shadow-[0_0_30px_rgba(231,99,84,0.4)] transition-shadow duration-200 active:scale-[0.98]"
+              >
+                <Calendar className="w-5 h-5 lg:w-6 lg:h-6 shrink-0" aria-hidden />
+                Agenda tu consulta
+              </Link>
+              <Link
+                to="/portfolio"
+                className="inline-flex items-center justify-center gap-2 text-white/90 px-5 py-4 lg:py-4 rounded-full font-semibold text-base lg:text-lg hover:text-primary transition-colors duration-200"
+              >
+                Ver Portafolio
+                <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" aria-hidden />
+              </Link>
+            </div>
+          </div>
+
+          <div className="shrink-0 pt-8 lg:pt-10 border-t border-white/10">
+            <p className="text-[11px] font-bold tracking-[0.28em] text-white/40 uppercase">
+              Confiado por equipos que escalan en serio
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Floating product card — Productos */}
+        <motion.div
+          variants={fadeIn}
+          className="lg:justify-self-end lg:self-end w-full"
+        >
+          <div className="glass-panel rounded-3xl border border-white/15 p-10 md:p-12 lg:p-14 shadow-[0_28px_70px_-28px_rgba(0,0,0,0.75)]">
+            <div className="flex items-center gap-2.5 mb-5" aria-hidden>
+              <span className="w-2 h-2 rotate-45 bg-tertiary/50" />
+              <span className="w-2 h-2 rotate-45 bg-tertiary/30" />
+              <span className="w-2 h-2 rotate-45 bg-primary" />
+            </div>
+            <p className="text-xs lg:text-sm font-bold tracking-[0.28em] text-white/60 uppercase mb-4">
+              Productos
+            </p>
+            <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-snug mb-4">
+              Soluciones web listas para lanzar
+            </h2>
+            <p className="text-base md:text-lg text-tertiary leading-relaxed mb-8">
+              Activos digitales pre-diseñados para escalar tu presencia sin
+              esperar meses.
+            </p>
             <Link
-              to="/portfolio"
-              className="inline-flex items-center justify-center gap-3 bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white/5 transition-colors duration-200 active:scale-[0.98]"
+              to="/products"
+              className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full text-base md:text-lg font-bold hover:shadow-[0_0_30px_rgba(231,99,84,0.4)] transition-shadow duration-200 active:scale-[0.98]"
             >
-              Ver Portafolio
+              Ver los productos
               <ArrowRight className="w-5 h-5 shrink-0" aria-hidden />
             </Link>
-          </motion.div>
+          </div>
         </motion.div>
-      </div>
-
-      <motion.div
-        className="hidden sm:block absolute bottom-10 end-6 md:end-16 z-20 p-6 md:p-7 glass-panel rounded-2xl max-w-[min(100vw-3rem,20rem)] md:max-w-[22rem] border border-tertiary/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.45)]"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.3 }}
-      >
-        <p className="text-sm text-primary font-bold leading-snug mb-2">
-          Integra IA real en tu producto.
-        </p>
-        <p className="text-white text-sm font-medium leading-snug">
-          Convierte procesos manuales en flujos automatizados que realmente generan ingresos.
-        </p>
       </motion.div>
-
     </section>
   );
 }

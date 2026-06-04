@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
-const PRODUCTS_BG =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCrEObTwvD2uX6Gs-Qjy8kIqHL8IHmb-Shh-UqstKNrb5AYesih9_t4KU80oTWaGiIZqrYalJbzjQN5dAO6eKkDMOFZEICOLNfjCW05Ok9YdbEVK5-KV2s6TTeWKM4UNlGBbc7pEe-zi3KpGjSKn8Ab9mBREjpZajP3B29LSA6KOD3Xq_VW9Ii7xzfSG_6tDWGiDgpEijDiHMvPH__q2zdBPf023OgS5NUJL9hwcJ9kMVLmogHuV7uk3X2G4HigVwznfLJOO0G7Nlg";
+const PRODUCTS_BG = "/images/productos_bg.png";
 
 const CONSULTING_BG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBibSgy1NiVPKdfi-mABluMZuFe67J0cen8kKeHqfDaeTHtzYoTiJnewqWPauNQZyZoAuyHjrCq6sMy47VRH0ZFBVGaDThV6fb6caVjrm9w8IJlf8rS4c3GK-2Qgmf2l3aq4863kHGwsdUhgeEs6cG0bl7mSZagw2_nMyfG3dUC3i2qfWJUqPcpP274iK0zu-2drPhmZ-7CbOEYUEz4F_k8Rh2tW4Fus8jnvpJsVGQqt5pOl0Y1-hZBBf0MWgnn6n6UTDMlvBzr7QY";
@@ -29,7 +28,7 @@ export default function ChoiceNavigator() {
             src={PRODUCTS_BG}
             alt=""
             aria-hidden
-            className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+            className="w-full h-full object-cover opacity-90 mix-blend-luminosity"
           />
         </div>
 
@@ -76,7 +75,7 @@ export default function ChoiceNavigator() {
             src={CONSULTING_BG}
             alt=""
             aria-hidden
-            className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
+            className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
           />
         </div>
 
@@ -90,7 +89,7 @@ export default function ChoiceNavigator() {
             Diseño de sistemas desde 0 basados en tus necesidades específicas, con enfoque en automatización y escalabilidad.
           </p>
           <Link
-            to="/consulting"
+            to="/"
             className="flex items-center gap-2 py-3 px-8 rounded-full text-sm font-semibold
                        bg-primary text-white hover:opacity-90 active:scale-[0.98]
                        transition-all duration-150
