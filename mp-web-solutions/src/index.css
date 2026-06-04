@@ -47,13 +47,13 @@
   background-color: var(--color-background);
   background-image:
     /* major ruled lines */
-    linear-gradient(rgba(199, 219, 230, 0.11) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199, 219, 230, 0.11) 1px, transparent 1px),
+    linear-gradient(rgba(199, 219, 230, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 219, 230, 0.16) 1px, transparent 1px),
     /* minor ruled lines */
-    linear-gradient(rgba(199, 219, 230, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199, 219, 230, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(199, 219, 230, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 219, 230, 0.07) 1px, transparent 1px),
     /* intersection ticks */
-    radial-gradient(circle, rgba(199, 219, 230, 0.16) 1.25px, transparent 1.75px);
+    radial-gradient(circle, rgba(199, 219, 230, 0.24) 1.25px, transparent 1.75px);
   background-size:
     84px 84px,
     84px 84px,
@@ -89,37 +89,17 @@
 
 @media (min-width: 1024px) {
   .hero-arch-grid {
-    width: 62%;
-    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 62%, transparent 100%);
-    mask-image: linear-gradient(to right, #000 0%, #000 62%, transparent 100%);
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
   }
 }
 
-.hero-photo-layer {
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 100%);
-}
-
-@media (min-width: 1024px) {
-  .hero-photo-layer {
-    left: 46%;
-    right: 0;
-    top: 0;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(0, 0, 0, 0.35) 10%,
-      #000 24%,
-      #000 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(0, 0, 0, 0.35) 10%,
-      #000 24%,
-      #000 100%
-    );
-  }
+/* Solid "clearing" behind hero cards so the grid reads as wrapping around them */
+.hero-card-clearing {
+  background: var(--color-background);
+  border-radius: 2.25rem;
+  box-shadow: 0 0 72px 34px var(--color-background);
 }
 
 @property --border-angle {
