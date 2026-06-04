@@ -42,6 +42,66 @@
   will-change: transform;
 }
 
+/* Architectural blueprint grid for hero left zone */
+.hero-arch-grid {
+  background-color: var(--color-background);
+  background-image:
+    /* major ruled lines */
+    linear-gradient(rgba(199, 219, 230, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 219, 230, 0.16) 1px, transparent 1px),
+    /* minor ruled lines */
+    linear-gradient(rgba(199, 219, 230, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 219, 230, 0.07) 1px, transparent 1px),
+    /* intersection ticks */
+    radial-gradient(circle, rgba(199, 219, 230, 0.24) 1.25px, transparent 1.75px);
+  background-size:
+    84px 84px,
+    84px 84px,
+    21px 21px,
+    21px 21px,
+    84px 84px;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    -1px -1px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 92%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 92%);
+}
+
+/* faint diagonal blueprint hatch for depth */
+.hero-arch-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 38px,
+    rgba(199, 219, 230, 0.03) 38px,
+    rgba(199, 219, 230, 0.03) 39px
+  );
+  -webkit-mask-image: inherit;
+  mask-image: inherit;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-arch-grid {
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+  }
+}
+
+/* Solid "clearing" behind hero cards so the grid reads as wrapping around them */
+.hero-card-clearing {
+  background: var(--color-background);
+  border-radius: 2.25rem;
+  box-shadow: 0 0 72px 34px var(--color-background);
+}
+
 @property --border-angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -99,7 +159,6 @@
     animation: none;
   }
 }
-
 @media (min-width: 768px) {
   .diagonal-split-left {
     clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
@@ -114,3 +173,4 @@
     padding-top: 20%;
   }
 }
+

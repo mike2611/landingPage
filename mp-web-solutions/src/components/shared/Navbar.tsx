@@ -19,7 +19,7 @@ export default function Navbar() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+    <header className="fixed inset-x-0 top-0 z-50 bg-background border-b border-border">
       <div className="flex items-center px-6 md:px-12 py-6 max-w-7xl mx-auto">
         <div className="flex items-center gap-8 md:gap-12 min-w-0">
           <Link
@@ -82,7 +82,7 @@ export default function Navbar() {
       {menuOpen ? (
         <div
           id="mobile-nav"
-          className="md:hidden absolute inset-x-0 top-full h-screen z-40 bg-background/98 backdrop-blur-md border-t border-border px-6 py-8 flex flex-col gap-6"
+          className="md:hidden absolute inset-x-0 top-full h-screen z-40 bg-background border-t border-border px-6 py-8 flex flex-col gap-6"
           role="dialog"
           aria-modal="true"
           aria-label="Navegación móvil"

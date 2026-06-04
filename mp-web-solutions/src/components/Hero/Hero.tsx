@@ -1,88 +1,144 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { Building2, Calendar, ArrowRight, ShieldCheck } from "lucide-react";
 import { fadeIn, heroFadeIn, staggerContainer } from "../../lib/animations";
-import { opensInHttpTab, whatsappHref } from "../../lib/links";
+
+function HeroInlinePill({
+  icon: Icon,
+  label,
+}: {
+  icon: typeof Building2;
+  label: string;
+}) {
+  return (
+    <span className="inline-flex items-center gap-2 align-middle rounded-full border border-white/12 bg-white/[0.07] px-3 py-1.5 sm:px-3.5 sm:py-2 text-base sm:text-lg font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+      <Icon className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-white/85" aria-hidden />
+      {label}
+    </span>
+  );
+}
 
 export default function Hero() {
-  const wa = whatsappHref();
-  const waNewTab = opensInHttpTab(wa);
-
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative overflow-hidden -mt-24 pt-24 min-h-screen flex">
+      {/* Architectural grid — full background */}
+      <div
+        className="hero-arch-grid pointer-events-none absolute inset-0 z-0"
+        aria-hidden
+      />
 
-      {/* Background image — bleeds right, fades left */}
-      <div className="absolute inset-y-0 end-0 w-full lg:w-[60%] z-0">
-        <img
-          src="/images/hero.webp"
-          alt="Vista de panel web MP Web Solutions"
-          fetchPriority="high"
-          decoding="sync"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover object-left"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 py-24">
+      {/* ── Foreground content ───────────────────────────────── */}
+      <motion.div
+        className="relative z-10 w-full grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-8 lg:gap-10 px-6 sm:px-10 lg:px-16 py-10 min-h-[calc(100vh-6rem)] lg:content-center"
+        initial="initial"
+        animate="animate"
+        variants={staggerContainer}
+      >
+        {/* Floating panel — Consultoría */}
         <motion.div
-          className="max-w-3xl"
-          initial="initial"
-          animate="animate"
-          variants={staggerContainer}
+          variants={fadeIn}
+          className="relative flex w-full lg:w-full lg:justify-self-center min-h-[22rem] lg:h-[calc(100vh-18rem)] lg:min-h-0"
         >
+          <div className="hero-card-clearing pointer-events-none absolute -inset-3 -z-10" aria-hidden />
+          <div className="relative flex h-full w-full flex-col justify-between bg-surface/30 backdrop-blur-sm border border-white/10 rounded-[1.75rem] px-8 sm:px-10 lg:px-12 xl:px-14 py-10 lg:py-12 xl:py-14 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.85)]">
+          <div className="flex flex-1 flex-col justify-center gap-6 sm:gap-7 lg:gap-8">
+            <div className="flex items-center gap-1.5" aria-hidden>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span className="w-1.5 h-1.5 rounded-full bg-tertiary/60" />
+              <span className="w-1.5 h-1.5 rounded-full bg-tertiary/30" />
+            </div>
 
-          <motion.h1
-            variants={heroFadeIn}
-            className="font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.08] tracking-tight text-balance mb-8"
-          >
-            Sistemas de automatización para escalar tu negocio.
-          </motion.h1>
-          <motion.p
-            variants={fadeIn}
-            className="text-lg md:text-xl text-tertiary max-w-lg font-light leading-relaxed mb-10"
-          >
-            Diseño sistemas digitales que eliminan cuellos de botella y convierten visitas en clientes — desde tu web hasta el seguimiento automatizado.
-          </motion.p>
-          <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={wa}
-              {...(waNewTab
-                ? { target: "_blank", rel: "noopener noreferrer" as const }
-                : {})}
-              className="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_30px_rgba(231,99,84,0.4)] transition-shadow duration-200 active:scale-[0.98]"
+            <motion.h1
+              variants={heroFadeIn}
+              className="font-heading text-3xl md:text-4xl lg:text-5xl xl:text-[3.25rem] font-extrabold text-white tracking-tight text-balance leading-[1.08]"
             >
-              <MessageCircle className="w-5 h-5 shrink-0" aria-hidden />
-              Cuéntame tu proyecto
-            </a>
+              Sistemas de automatización para{" "}
+              <span className="italic font-bold">escalar tu negocio.</span>
+            </motion.h1>
+
+            <p className="text-base md:text-lg text-tertiary font-light leading-relaxed">
+              Diseño sistemas digitales que eliminan cuellos de botella — desde tu web hasta el seguimiento
+              automatizado.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-5 pt-2">
+              <Link
+                to="/agendar"
+                className="inline-flex items-center justify-center gap-3 bg-primary text-white px-7 py-3.5 rounded-full font-bold text-base hover:shadow-[0_0_30px_rgba(231,99,84,0.4)] transition-shadow duration-200 active:scale-[0.98]"
+              >
+                <Calendar className="w-5 h-5 shrink-0" aria-hidden />
+                Agenda tu consulta
+              </Link>
+              <Link
+                to="/portfolio"
+                className="inline-flex items-center justify-center gap-2 text-white/90 px-4 py-3.5 rounded-full font-semibold text-base hover:text-primary transition-colors duration-200"
+              >
+                Ver Portafolio
+                <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
+              </Link>
+            </div>
+          </div>
+
+          <div className="shrink-0 pt-6 lg:pt-8 border-t border-white/10">
+            <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-white/55">
+              Escala tu{" "}
+              <HeroInlinePill icon={Building2} label="empresa" />
+              {" "}sin comprometer{" "}
+              <HeroInlinePill icon={ShieldCheck} label="seguridad" />
+            </p>
+          </div>
+          </div>
+        </motion.div>
+
+        {/* Floating product card — Productos */}
+        <motion.div
+          variants={fadeIn}
+          className="relative flex w-full lg:w-[96%] lg:justify-self-center lg:self-center lg:h-[calc((100vh-18rem)*0.71)]"
+        >
+          <div className="hero-card-clearing pointer-events-none absolute -inset-3 -z-10" aria-hidden />
+          <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-background p-8 md:p-10 lg:p-12 shadow-[0_28px_70px_-28px_rgba(0,0,0,0.55)] aspect-[689/410] lg:aspect-auto">
+            <img
+              src="/images/bg_img_hero.png"
+              alt=""
+              className="pointer-events-none absolute right-0 top-0 h-full w-auto max-w-none select-none"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 from-0% via-black/30 via-[32%] to-transparent"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background from-0% via-background via-[42%] to-background/55 to-[68%] to-background/20 to-[88%] to-transparent"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_88%_50%,rgba(231,99,84,0.08),transparent_55%)]"
+              aria-hidden
+            />
+
+            <div className="relative z-10 flex flex-1 flex-col justify-center gap-5 lg:gap-6 max-w-[85%] lg:max-w-[72%]">
+              <div className="flex items-center gap-2.5" aria-hidden>
+                <span className="w-2 h-2 rotate-45 bg-primary shadow-[0_0_8px_rgba(231,99,84,0.6)]" />
+                <span className="w-2 h-2 rotate-45 bg-tertiary/70" />
+                <span className="w-2 h-2 rotate-45 bg-white/20" />
+              </div>
+              <p className="text-xs lg:text-sm font-bold tracking-[0.28em] text-primary uppercase">
+                Productos web pre-diseñados
+              </p>
+              <h2 className="text-white text-xl md:text-2xl lg:text-3xl font-heading font-bold leading-snug text-balance">
+                Soluciones web listas para escalar tu presencia digital.
+              </h2>
+            </div>
             <Link
-              to="/portfolio"
-              className="inline-flex items-center justify-center gap-3 bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white/5 transition-colors duration-200 active:scale-[0.98]"
+              to="/products"
+              className="relative z-10 mt-6 inline-flex shrink-0 items-center justify-center gap-2 self-start bg-primary text-white px-7 py-3.5 rounded-full text-base font-bold hover:shadow-[0_0_30px_rgba(231,99,84,0.45)] transition-shadow duration-200 active:scale-[0.98]"
             >
-              Ver Portafolio
+              Ver los productos
               <ArrowRight className="w-5 h-5 shrink-0" aria-hidden />
             </Link>
-          </motion.div>
+          </div>
         </motion.div>
-      </div>
-
-      <motion.div
-        className="hidden sm:block absolute bottom-10 end-6 md:end-16 z-20 p-6 md:p-7 glass-panel rounded-2xl max-w-[min(100vw-3rem,20rem)] md:max-w-[22rem] border border-tertiary/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.45)]"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.3 }}
-      >
-        <p className="text-sm text-primary font-bold leading-snug mb-2">
-          Integra IA real en tu producto.
-        </p>
-        <p className="text-white text-sm font-medium leading-snug">
-          Convierte procesos manuales en flujos automatizados que realmente generan ingresos.
-        </p>
       </motion.div>
-
     </section>
   );
 }

@@ -14,7 +14,7 @@ const services: Service[] = [
     icon: MessageCircle,
     title: "Tu Negocio en Piloto Automático",
     desc: "Audito los procesos de tu negocio para identificar cuellos de botella reales y determinar qué automatizar y qué no.",
-    detail: "Leads directo a tu WhatsApp.",
+    detail: "Flujos de trabajo automatizados.",
   },
   {
     icon: Brain,

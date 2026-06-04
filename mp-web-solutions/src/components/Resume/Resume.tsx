@@ -67,7 +67,7 @@ export default function Resume() {
           </motion.div>
 
           <div className="relative">
-            <div className="absolute -inset-4 bg-tertiary/20 blur-3xl rounded-full pointer-events-none"></div>
+            <div className="absolute -inset-2 bg-tertiary/8 blur-xl rounded-full pointer-events-none" aria-hidden />
             <div className="relative space-y-3">
               <p className="text-xs font-mono text-tertiary uppercase tracking-widest mb-6">Blueprint Tecnológico</p>
               {stackLayers.map((layer, i) => (
