@@ -42,6 +42,24 @@
   will-change: transform;
 }
 
+/* Tailwind-style dot grid for hero left zone */
+.hero-dot-grid {
+  background-color: var(--color-background);
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(199, 219, 230, 0.22) 1.25px,
+      transparent 1.25px
+    ),
+    radial-gradient(
+      circle,
+      rgba(199, 219, 230, 0.1) 1.25px,
+      transparent 1.25px
+    );
+  background-size: 20px 20px, 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
 @property --border-angle {
   syntax: "<angle>";
   initial-value: 0deg;
