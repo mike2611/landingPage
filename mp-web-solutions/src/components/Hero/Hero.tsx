@@ -6,14 +6,14 @@ import { fadeIn, heroFadeIn, staggerContainer } from "../../lib/animations";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden -mt-24 pt-24 min-h-screen flex">
-      {/* Left zone — dot grid texture (Tailwind-style) */}
+      {/* Left zone — dot grid (fades into photo at the seam) */}
       <div
-        className="hero-dot-grid pointer-events-none absolute inset-y-0 left-0 z-[1] w-full lg:w-[57.5%]"
+        className="hero-dot-grid pointer-events-none absolute inset-y-0 left-0 z-[1] w-full"
         aria-hidden
       />
 
-      {/* Right zone — photo (Productos column on desktop) */}
-      <div className="pointer-events-none absolute inset-x-0 top-[38%] bottom-0 z-0 overflow-hidden bg-background lg:inset-y-0 lg:left-[57.5%] lg:right-0 lg:top-0">
+      {/* Right zone — photo bleeds into dot grid */}
+      <div className="hero-photo-layer pointer-events-none absolute inset-x-0 top-[34%] bottom-0 z-0 overflow-hidden lg:inset-y-0">
         <img
           src="/images/bg_img_pepper4.png"
           alt=""
@@ -21,11 +21,19 @@ export default function Hero() {
           decoding="async"
           width={1705}
           height={891}
-          sizes="(min-width: 1024px) 42.5vw, 100vw"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-80"
+          sizes="(min-width: 1024px) 54vw, 100vw"
+          className="absolute inset-0 h-full w-full object-cover object-[55%_center] opacity-90"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/25 to-transparent lg:via-background/15"
+          className="absolute inset-0 bg-gradient-to-r from-background via-background/45 to-transparent lg:from-background lg:via-background/20 lg:to-transparent"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_120%_at_0%_50%,var(--color-background)_0%,transparent_55%)] opacity-90 lg:opacity-100"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/25"
           aria-hidden
         />
       </div>
