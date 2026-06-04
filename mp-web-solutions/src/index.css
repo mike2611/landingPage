@@ -42,28 +42,53 @@
   will-change: transform;
 }
 
-/* Tailwind-style dot grid for hero left zone */
-.hero-dot-grid {
+/* Architectural blueprint grid for hero left zone */
+.hero-arch-grid {
   background-color: var(--color-background);
   background-image:
-    radial-gradient(
-      circle,
-      rgba(199, 219, 230, 0.22) 1.25px,
-      transparent 1.25px
-    ),
-    radial-gradient(
-      circle,
-      rgba(199, 219, 230, 0.1) 1.25px,
-      transparent 1.25px
-    );
-  background-size: 20px 20px, 20px 20px;
-  background-position: 0 0, 10px 10px;
+    /* major ruled lines */
+    linear-gradient(rgba(199, 219, 230, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 219, 230, 0.11) 1px, transparent 1px),
+    /* minor ruled lines */
+    linear-gradient(rgba(199, 219, 230, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 219, 230, 0.045) 1px, transparent 1px),
+    /* intersection ticks */
+    radial-gradient(circle, rgba(199, 219, 230, 0.16) 1.25px, transparent 1.75px);
+  background-size:
+    84px 84px,
+    84px 84px,
+    21px 21px,
+    21px 21px,
+    84px 84px;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    -1px -1px;
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 92%);
   mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 92%);
 }
 
+/* faint diagonal blueprint hatch for depth */
+.hero-arch-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 38px,
+    rgba(199, 219, 230, 0.03) 38px,
+    rgba(199, 219, 230, 0.03) 39px
+  );
+  -webkit-mask-image: inherit;
+  mask-image: inherit;
+  pointer-events: none;
+}
+
 @media (min-width: 1024px) {
-  .hero-dot-grid {
+  .hero-arch-grid {
     width: 62%;
     -webkit-mask-image: linear-gradient(to right, #000 0%, #000 62%, transparent 100%);
     mask-image: linear-gradient(to right, #000 0%, #000 62%, transparent 100%);

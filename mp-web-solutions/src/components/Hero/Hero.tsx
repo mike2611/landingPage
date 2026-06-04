@@ -6,16 +6,16 @@ import { fadeIn, heroFadeIn, staggerContainer } from "../../lib/animations";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden -mt-24 pt-24 min-h-screen flex">
-      {/* Left zone — dot grid (fades into photo at the seam) */}
+      {/* Left zone — architectural grid (fades into photo at the seam) */}
       <div
-        className="hero-dot-grid pointer-events-none absolute inset-y-0 left-0 z-[1] w-full"
+        className="hero-arch-grid pointer-events-none absolute inset-y-0 left-0 z-[1] w-full"
         aria-hidden
       />
 
       {/* Right zone — photo bleeds into dot grid */}
       <div className="hero-photo-layer pointer-events-none absolute inset-x-0 top-[34%] bottom-0 z-0 overflow-hidden lg:inset-y-0">
         <img
-          src="/images/bg_img_pepper4.png"
+          src="/images/bg_img_hero.png"
           alt=""
           fetchPriority="high"
           decoding="async"
