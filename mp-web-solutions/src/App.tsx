@@ -12,9 +12,13 @@ const Products    = lazy(() => import("./pages/Products"));
 
 function MainLayout() {
   return (
-    <div className="min-h-screen bg-background text-white selection:bg-primary selection:text-white">
+    <div className="relative min-h-screen text-white selection:bg-primary selection:text-white">
+      <div
+        className="arch-grid-bg pointer-events-none fixed inset-0 z-0"
+        aria-hidden
+      />
       <Navbar />
-      <main className="pt-24">
+      <main className="relative z-10 pt-24">
         <Outlet />
       </main>
       <Footer />

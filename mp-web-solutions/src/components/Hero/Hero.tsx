@@ -21,12 +21,6 @@ function HeroInlinePill({
 export default function Hero() {
   return (
     <section className="relative overflow-hidden -mt-24 pt-24 min-h-screen flex">
-      {/* Architectural grid — full background */}
-      <div
-        className="hero-arch-grid pointer-events-none absolute inset-0 z-0"
-        aria-hidden
-      />
-
       {/* ── Foreground content ───────────────────────────────── */}
       <motion.div
         className="relative z-10 w-full grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-8 lg:gap-10 px-6 sm:px-10 lg:px-16 py-10 min-h-[calc(100vh-6rem)] lg:content-center"
@@ -39,8 +33,7 @@ export default function Hero() {
           variants={fadeIn}
           className="relative flex w-full lg:w-full lg:justify-self-center min-h-[22rem] lg:h-[calc(100vh-18rem)] lg:min-h-0"
         >
-          <div className="hero-card-clearing pointer-events-none absolute -inset-3 -z-10" aria-hidden />
-          <div className="relative flex h-full w-full flex-col justify-between bg-surface/30 backdrop-blur-sm border border-white/10 rounded-[1.75rem] px-8 sm:px-10 lg:px-12 xl:px-14 py-10 lg:py-12 xl:py-14 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.85)]">
+          <div className="relative flex h-full w-full flex-col justify-between bg-surface/30 backdrop-blur-sm border border-white/10 rounded-[1.75rem] px-8 sm:px-10 lg:px-12 xl:px-14 py-10 lg:py-12 xl:py-14">
           <div className="flex flex-1 flex-col justify-center gap-6 sm:gap-7 lg:gap-8">
             <div className="flex items-center gap-1.5" aria-hidden>
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -95,8 +88,7 @@ export default function Hero() {
           variants={fadeIn}
           className="relative flex w-full lg:w-[96%] lg:justify-self-center lg:self-center lg:h-[calc((100vh-18rem)*0.71)]"
         >
-          <div className="hero-card-clearing pointer-events-none absolute -inset-3 -z-10" aria-hidden />
-          <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-background p-8 md:p-10 lg:p-12 shadow-[0_28px_70px_-28px_rgba(0,0,0,0.55)] aspect-[689/410] lg:aspect-auto">
+          <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-background p-8 md:p-10 lg:p-12 aspect-[689/410] lg:aspect-auto">
             <img
               src="/images/bg_img_hero.png"
               alt=""

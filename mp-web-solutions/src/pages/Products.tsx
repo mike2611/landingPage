@@ -87,7 +87,7 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function Products() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-background min-h-screen">
+    <section className="py-24 px-6 md:px-12 min-h-screen">
       <div className="max-w-4xl mx-auto">
 
         <BackLink to="/" label="Back to Home" />
