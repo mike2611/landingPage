@@ -43,6 +43,13 @@ export default function Navbar() {
               INICIO
             </NavLink>
             <NavLink
+              to="/products"
+              onClick={scrollToTop}
+              className={({ isActive }) => (isActive ? navActive : navClass)}
+            >
+              PRODUCTOS
+            </NavLink>
+            <NavLink
               to="/portfolio"
               onClick={scrollToTop}
               className={({ isActive }) => (isActive ? navActive : navClass)}
@@ -96,6 +103,15 @@ export default function Navbar() {
             }
           >
             INICIO
+          </NavLink>
+          <NavLink
+            to="/products"
+            onClick={scrollToTop}
+            className={({ isActive }) =>
+              isActive ? `${navActive} text-lg py-1 font-semibold` : linkMobile
+            }
+          >
+            PRODUCTOS
           </NavLink>
           <NavLink
             to="/portfolio"
