@@ -72,7 +72,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="shrink-0 pt-6 lg:pt-8 border-t border-white/10">
+          <div className="hidden lg:block shrink-0 pt-6 lg:pt-8 border-t border-white/10">
             <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-white/55">
               Escala tu{" "}
               <HeroInlinePill icon={Building2} label="empresa" />
@@ -86,9 +86,9 @@ export default function Hero() {
         {/* Floating product card — Productos */}
         <motion.div
           variants={fadeIn}
-          className="relative flex w-full lg:w-[96%] lg:justify-self-center lg:self-center lg:h-[calc((100vh-18rem)*0.71)]"
+          className="relative flex w-full lg:w-[96%] lg:justify-self-center lg:self-center min-h-[20rem] lg:h-[calc((100vh-18rem)*0.71)]"
         >
-          <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-background p-8 md:p-10 lg:p-12 aspect-[689/410] lg:aspect-auto">
+          <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-background p-6 sm:p-8 md:p-10 lg:p-12 aspect-auto lg:aspect-[689/410]">
             <img
               src="/images/bg_img_hero.png"
               alt=""
@@ -108,7 +108,7 @@ export default function Hero() {
               aria-hidden
             />
 
-            <div className="relative z-10 flex flex-1 flex-col justify-center gap-5 lg:gap-6 max-w-[85%] lg:max-w-[72%]">
+            <div className="relative z-10 flex flex-1 flex-col justify-center gap-5 lg:gap-6 max-w-[92%] sm:max-w-[85%] lg:max-w-[72%]">
               <div className="flex items-center gap-2.5" aria-hidden>
                 <span className="w-2 h-2 rotate-45 bg-primary shadow-[0_0_8px_rgba(231,99,84,0.6)]" />
                 <span className="w-2 h-2 rotate-45 bg-tertiary/70" />

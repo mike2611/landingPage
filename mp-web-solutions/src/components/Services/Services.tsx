@@ -43,9 +43,9 @@ function ServiceCardMarker({ count }: { count: 1 | 2 | 3 }) {
 
 export default function Services() {
   return (
-    <section className="py-32 px-6 md:px-12 bg-transparent" id="services">
+    <section className="py-10 md:py-24 lg:py-32 px-6 md:px-12 bg-transparent" id="services">
       <div className="max-w-7xl mx-auto ">
-        <div className="mb-20">
+        <div className="mb-12 md:mb-16 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
