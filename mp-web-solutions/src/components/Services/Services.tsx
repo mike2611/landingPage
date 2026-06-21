@@ -78,8 +78,8 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 className="flex flex-col items-start text-left h-full bg-surface-high rounded-[1.75rem] group cursor-pointer
-                           border border-primary/25 backdrop-blur-sm
-                           card-shadow-lg shadow-[0_8px_32px_-8px_rgba(231,99,84,0.2)]
+                           border border-tertiary/10  backdrop-blur-sm
+                           hover:border-primary/10
                            hover:shadow-[0_40px_100px_-30px_rgba(0,0,0,0.85),0_12px_40px_-8px_rgba(231,99,84,0.35)]
                            px-8 sm:px-10 lg:px-12 xl:px-14 py-10 lg:py-12 xl:py-14
                            transition-[box-shadow] duration-200"
