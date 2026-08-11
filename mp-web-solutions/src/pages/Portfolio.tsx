@@ -228,7 +228,7 @@ export default function Portfolio() {
           className="mb-20"
           transition={{ duration: 0.3 }}
         >
-          <BackLink to="/" label="Sobre el proceso" />
+          <BackLink to="/" label="Inicio" />
           <h1 className="font-heading text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
             Portafolio
           </h1>

@@ -32,9 +32,9 @@ export default function Resume() {
   const openInNewTab = resumeUrl && opensInHttpTab(resumeUrl);
 
   return (
-    <section className="py-32 px-6 md:px-12 overflow-hidden" id="resume">
+    <section className="py-16 md:py-24 lg:py-32 px-6 md:px-12 overflow-hidden" id="resume">
       <div className="max-w-7xl mx-auto bg-surface-high rounded-3xl p-8 md:p-20 relative border border-border">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export default function Resume() {
             </div>
           </motion.div>
 
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <div className="absolute -inset-2 bg-tertiary/8 blur-xl rounded-full pointer-events-none" aria-hidden />
             <div className="relative space-y-3">
               <p className="text-xs font-mono text-tertiary uppercase tracking-widest mb-6">Blueprint Tecnológico</p>

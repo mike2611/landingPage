@@ -42,18 +42,18 @@
   will-change: transform;
 }
 
-/* Architectural blueprint grid for hero left zone */
-.hero-arch-grid {
-  background-color: var(--color-background);
+/* Architectural blueprint grid — site-wide background */
+.arch-grid-bg {
+  background-color: #050d06;
   background-image:
     /* major ruled lines */
-    linear-gradient(rgba(199, 219, 230, 0.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199, 219, 230, 0.16) 1px, transparent 1px),
+    linear-gradient(rgba(199, 219, 230, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 219, 230, 0.14) 1px, transparent 1px),
     /* minor ruled lines */
-    linear-gradient(rgba(199, 219, 230, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199, 219, 230, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(199, 219, 230, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 219, 230, 0.06) 1px, transparent 1px),
     /* intersection ticks */
-    radial-gradient(circle, rgba(199, 219, 230, 0.24) 1.25px, transparent 1.75px);
+    radial-gradient(circle, rgba(199, 219, 230, 0.18) 1.25px, transparent 1.75px);
   background-size:
     84px 84px,
     84px 84px,
@@ -66,12 +66,10 @@
     0 0,
     0 0,
     -1px -1px;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 92%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 92%);
 }
 
 /* faint diagonal blueprint hatch for depth */
-.hero-arch-grid::after {
+.arch-grid-bg::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -82,24 +80,7 @@
     rgba(199, 219, 230, 0.03) 38px,
     rgba(199, 219, 230, 0.03) 39px
   );
-  -webkit-mask-image: inherit;
-  mask-image: inherit;
   pointer-events: none;
-}
-
-@media (min-width: 1024px) {
-  .hero-arch-grid {
-    width: 100%;
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-  }
-}
-
-/* Solid "clearing" behind hero cards so the grid reads as wrapping around them */
-.hero-card-clearing {
-  background: var(--color-background);
-  border-radius: 2.25rem;
-  box-shadow: 0 0 72px 34px var(--color-background);
 }
 
 @property --border-angle {

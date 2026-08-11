@@ -14,7 +14,7 @@ export default function Footer() {
   const gh = githubHref();
 
   return (
-    <footer className="py-12 px-6 md:px-12 border-t border-border">
+    <footer className="relative z-10 bg-background py-12 px-6 md:px-12 border-t border-border">
       <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto text-sm">
         <div className="flex items-center gap-2">
           <span className="text-tertiary font-semibold uppercase tracking-widest">

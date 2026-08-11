@@ -1,9 +1,7 @@
 import { motion } from "motion/react";
-import { Brain, Zap, MessageCircle, type LucideIcon } from "lucide-react";
 import { staggerContainer } from "../../lib/animations";
 
 type Service = {
-  icon: LucideIcon;
   title: string;
   desc: string;
   detail: string;
@@ -11,30 +9,43 @@ type Service = {
 
 const services: Service[] = [
   {
-    icon: MessageCircle,
     title: "Tu Negocio en Piloto Automático",
     desc: "Audito los procesos de tu negocio para identificar cuellos de botella reales y determinar qué automatizar y qué no.",
     detail: "Flujos de trabajo automatizados.",
   },
   {
-    icon: Brain,
     title: "Experiencias Digitales de Alto Rendimiento",
     desc: "Diseño interfaces rápidas y optimizadas que mejoran la experiencia y la conversión.",
     detail: "Velocidad de carga en segundos.",
   },
   {
-    icon: Zap,
     title: "Seguridad y Estabilidad a Escala Global",
     desc: "Tu presencia respaldada por la misma tecnología que utilizan empresas internacionales. Infraestructura en la nube para escalabilidad y disponibilidad.",
-    detail: "Hasta 99.9% de uptime. Infraestructura AWS",
+    detail: "Hasta 99.9% de uptime. AWS",
   },
 ];
 
+const markerColors = [
+  "bg-primary",
+  "bg-tertiary/60",
+  "bg-tertiary/30",
+] as const;
+
+function ServiceCardMarker({ count }: { count: 1 | 2 | 3 }) {
+  return (
+    <div className="flex items-center gap-2 mb-4" aria-hidden>
+      {markerColors.slice(0, count).map((color, i) => (
+        <span key={i} className={`w-2 h-2 shrink-0 rounded-full ${color}`} />
+      ))}
+    </div>
+  );
+}
+
 export default function Services() {
   return (
-    <section className="py-32 px-6 md:px-12 bg-surface-low" id="services">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+    <section className="py-10 md:py-24 lg:py-32 px-6 md:px-12 bg-transparent" id="services">
+      <div className="max-w-7xl mx-auto ">
+        <div className="mb-12 md:mb-16 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -47,25 +58,16 @@ export default function Services() {
               Metodología de Precisión
             </h2>
           </motion.div>
-          <motion.p
-            className="text-tertiary max-w-md text-lg leading-relaxed"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            No solo diseño sitios; desarrollo sistemas digitales escalables enfocados en crecimiento y captación de leads.
-          </motion.p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-stretch"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={staggerContainer}
         >
           {services.map((item, i) => {
-            const Icon = item.icon;
             return (
               <motion.div
                 key={i}
@@ -75,23 +77,15 @@ export default function Services() {
                 whileTap={{ scale: 0.98 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="flex flex-col p-8 md:p-10 bg-surface rounded-2xl group cursor-pointer
-                           border border-white/5
-                           hover:border-primary/25
-                           hover:bg-surface-high
-                           hover:shadow-[0_8px_32px_-8px_rgba(231,99,84,0.2)]
-                           transition-colors duration-200"
+                className="flex flex-col items-start text-left h-full bg-surface-high rounded-[1.75rem] group cursor-pointer
+                           border border-tertiary/10  backdrop-blur-sm
+                           hover:border-primary/10
+                           hover:shadow-[0_40px_100px_-30px_rgba(0,0,0,0.85),0_12px_40px_-8px_rgba(231,99,84,0.35)]
+                           px-8 sm:px-10 lg:px-12 xl:px-14 py-10 lg:py-12 xl:py-14
+                           transition-[box-shadow] duration-200"
               >
-                {/* Icon */}
-                <div className="flex justify-center items-center mb-8">
-                  <div className="w-14 h-14 rounded-full bg-secondary-container group-hover:bg-tertiary/20 flex items-center justify-center shrink-0 transition-colors duration-200">
-                    <Icon
-                      className="w-7 h-7 text-primary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-200"
-                      strokeWidth={1.75}
-                      aria-hidden
-                    />
-                  </div>
-                </div>
+
+                <ServiceCardMarker count={(i + 1) as 1 | 2 | 3} />
 
                 {/* Title */}
                 <h3 className="text-xl md:text-2xl font-bold font-heading tracking-tight mb-4">
