@@ -19,6 +19,14 @@ function HeroInlinePill({
 }
 
 export default function Hero() {
+  const scrollToServices = () => {
+    const element = document.getElementById("services");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState({}, "", "/");
+    }
+  };
+
   return (
     <section className="relative overflow-hidden -mt-24 pt-24 min-h-screen flex">
       {/* ── Foreground content ───────────────────────────────── */}
@@ -45,13 +53,11 @@ export default function Hero() {
               variants={heroFadeIn}
               className="font-heading text-3xl md:text-4xl lg:text-5xl xl:text-[3.25rem] font-extrabold text-white tracking-tight text-balance leading-[1.08]"
             >
-              Sistemas de automatización para{" "}
-              <span className="italic font-bold">escalar tu negocio.</span>
+              Automatización con IA para <span className="italic font-bold">escalar tu Negocio</span>
             </motion.h1>
 
-            <p className="text-base md:text-lg text-tertiary font-light leading-relaxed">
-              Diseño sistemas digitales que eliminan cuellos de botella — desde tu web hasta el seguimiento
-              automatizado.
+            <p className="text-base md:text-lg text-tertiary/90 font-light leading-relaxed">
+              Elimino los cuellos de botella operativos mediante soluciones con IA para que tu equipo enfoque su energía en crecimiento, no en tareas manuales.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 lg:gap-5 pt-2">
@@ -62,13 +68,13 @@ export default function Hero() {
                 <Calendar className="w-5 h-5 shrink-0" aria-hidden />
                 Agenda tu consulta
               </Link>
-              <Link
-                to="/portfolio"
-                className="inline-flex items-center justify-center gap-2 text-white/90 px-4 py-3.5 rounded-full font-semibold text-base hover:text-primary transition-colors duration-200"
+              <button
+                onClick={scrollToServices}
+                className="inline-flex items-center justify-center gap-2 text-white/90 px-4 py-3.5 rounded-full font-semibold text-base hover:text-primary transition-colors duration-200 cursor-pointer"
               >
-                Ver Portafolio
+                Ver Metodología
                 <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -114,18 +120,18 @@ export default function Hero() {
                 <span className="w-2 h-2 rotate-45 bg-tertiary/70" />
                 <span className="w-2 h-2 rotate-45 bg-white/20" />
               </div>
-              <p className="text-xs lg:text-sm font-bold tracking-[0.28em] text-primary uppercase">
-                Productos web pre-diseñados
-              </p>
               <h2 className="text-white text-xl md:text-2xl lg:text-3xl font-heading font-bold leading-snug text-balance">
-                Soluciones web listas para escalar tu presencia digital.
+                Plataformas Web y Automatización
               </h2>
+              <p className="text-base md:text-lg text-tertiary/90 font-light leading-relaxed mt-4">
+                Soluciones web integradas con automatización inteligente desde el día uno listas para escalar tu presencia digital.
+              </p>
             </div>
             <Link
-              to="/products"
+              to="/soluciones"
               className="relative z-10 mt-6 inline-flex shrink-0 items-center justify-center gap-2 self-start bg-primary text-white px-7 py-3.5 rounded-full text-base font-bold hover:shadow-[0_0_30px_rgba(231,99,84,0.45)] transition-shadow duration-200 active:scale-[0.98]"
             >
-              Ver los productos
+              Ver Soluciones Rápidas
               <ArrowRight className="w-5 h-5 shrink-0" aria-hidden />
             </Link>
           </div>

@@ -19,7 +19,7 @@ export function whatsappHref(): string {
 export function mailtoConsultHref(): string {
   const email = import.meta.env.VITE_CONTACT_EMAIL?.trim() ?? "";
   if (!email) return "#contact";
-  const subject = encodeURIComponent("Consulta — MP Web Solutions");
+  const subject = encodeURIComponent("Consulta — MP Tech Solutions");
   return `mailto:${email}?subject=${subject}`;
 }
 

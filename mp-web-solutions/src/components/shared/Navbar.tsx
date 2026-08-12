@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Calendar, Menu, Network, X } from "lucide-react";
+import { Calendar, Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const navClass =
   "text-white/90 font-semibold tracking-wide hover:text-primary transition-colors duration-200";
@@ -20,19 +21,19 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-background border-b border-border">
-      <div className="flex items-center px-6 md:px-12 py-6 max-w-7xl mx-auto">
-        <div className="flex items-center gap-8 md:gap-12 min-w-0">
-          <Link
-            to="/"
-            onClick={scrollToTop}
-            className="flex items-center gap-3 min-w-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-          >
-            <Network className="text-primary w-8 h-8 shrink-0" aria-hidden />
-            <span className="text-lg font-bold tracking-[0.2em] uppercase truncate">
-              MP Web Solutions
-            </span>
-          </Link>
+      <div className="flex items-center justify-between px-6 md:px-12 lg:px-16 py-6">
+        <Link
+          to="/"
+          onClick={scrollToTop}
+          className="flex items-center gap-3 min-w-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          <Logo className="w-10 h-10 shrink-0" />
+          <span className="text-lg font-bold tracking-[0.2em] uppercase truncate">
+            MP Tech
+          </span>
+        </Link>
 
+        <div className="flex items-center gap-10 md:gap-16">
           <nav className="hidden md:flex items-center gap-8" aria-label="Principal">
             <NavLink
               to="/"
@@ -43,23 +44,23 @@ export default function Navbar() {
               INICIO
             </NavLink>
             <NavLink
-              to="/products"
+              to="/soluciones"
               onClick={scrollToTop}
               className={({ isActive }) => (isActive ? navActive : navClass)}
             >
-              PRODUCTOS
+              SOLUCIONES
             </NavLink>
-            <NavLink
+            {/* TODO: Uncomment when portfolio is ready */}
+            {/* <NavLink
               to="/portfolio"
               onClick={scrollToTop}
               className={({ isActive }) => (isActive ? navActive : navClass)}
             >
               PORTAFOLIO
-            </NavLink>
+            </NavLink> */}
           </nav>
-        </div>
 
-        <div className="flex items-center gap-3 ml-auto">
+          <div className="flex items-center gap-3">
           <Link
             to="/agendar"
             onClick={scrollToTop}
@@ -83,6 +84,7 @@ export default function Navbar() {
             )}
             <span className="sr-only">Menú</span>
           </button>
+          </div>
         </div>
       </div>
 
@@ -105,15 +107,16 @@ export default function Navbar() {
             INICIO
           </NavLink>
           <NavLink
-            to="/products"
+            to="/soluciones"
             onClick={scrollToTop}
             className={({ isActive }) =>
               isActive ? `${navActive} text-lg py-1 font-semibold` : linkMobile
             }
           >
-            PRODUCTOS
+            SOLUCIONES
           </NavLink>
-          <NavLink
+          {/* TODO: Uncomment when portfolio is ready */}
+          {/* <NavLink
             to="/portfolio"
             onClick={scrollToTop}
             className={({ isActive }) =>
@@ -121,7 +124,7 @@ export default function Navbar() {
             }
           >
             PORTAFOLIO
-          </NavLink>
+          </NavLink> */}
           <Link
             to="/agendar"
             onClick={() => setMenuOpen(false)}

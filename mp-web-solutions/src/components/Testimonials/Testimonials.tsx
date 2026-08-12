@@ -6,13 +6,13 @@ const testimonials = [
     name: "Alejandro Rivas",
     role: "CEO, Tech Ventures",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuClYzutSXIDNp4pRzE-ujJ2ml1lMqfz0qCMYxeolIYausLNhdCgi4WGdbFrtNpY-RqzrvqvygKfWqHp1Q_hCXDHaSxOeZNyqpSWCko8NvjpiN3nPRczhgOSxxsrisLa6CN6HrKonoaIDp39Xmyb_lFMyuXCcLNws-L8KyS2y_UxiH4L8qgoKb4jGUsIjHYKyb3USww4iS-RX774GoSg-P57JOdO3nG3B3Z7f5f_Sg795Nsoyfrbo73eykomueK1PJcV1yXwj1-Xe2jI",
-    quote: "El nivel de detalle técnico y la capacidad de MP Web Solutions para entender nuestros objetivos de negocio superaron cualquier expectativa previa."
+    quote: "El nivel de detalle técnico y la capacidad de MP Tech Solutions para entender nuestros objetivos de negocio superaron cualquier expectativa previa."
   },
   {
     name: "Elena Martinez",
     role: "Founder, Creative Studio",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDHnctubi1U3e73ilam81ndXdMUZsQzXIXgdKwXhsNCpF5MRLEXmLNDSOvUdHGjVlP7B3lmhaWLCj8A1WNIjMiiq4UJmhzdd_5rtivieYimW2n4bjIHftgABqL6Cbwjoj1PmQmklY5Ym5-AoKQTDL0pWedcECEYoOkF8MoLXLuBaOg__b_LYvIBZcu8HprYB4m-cAXg1AvCEiOMC1LgfVakVQAnksqIlwybnrWRAqix5bTv4udfuhYyjSVS7ZVQ07Z0wfPMT5g3mQdL",
-    quote: "MP Web Solutions nos entregó un sistema de ventas automatizado que duplicó nuestros leads orgánicos en solo tres meses."
+    quote: "MP Tech Solutions nos entregó un sistema de ventas automatizado que duplicó nuestros leads orgánicos en solo tres meses."
   },
   {
     name: "Marcos Vega",

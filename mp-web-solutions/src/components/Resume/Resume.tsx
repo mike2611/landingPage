@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { CheckCircle2, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 import { opensInHttpTab, resumePublicHref } from "../../lib/links";
 
 const highlights = [
@@ -40,12 +40,12 @@ export default function Resume() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-4xl font-bold mb-5">Arquitecto de Software</h2>
+            <h2 className="font-heading text-4xl font-bold mb-5">Arquitecto de Software & IA</h2>
 
             <ul className="space-y-6 mb-12">
               {highlights.map((text, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <CheckCircle2 className="text-primary mt-1 flex-shrink-0" aria-hidden />
+                  <span className={`w-2 h-2 rotate-45 mt-2.5 shrink-0 ${i === 0 ? "bg-primary" : "bg-tertiary/70"}`} aria-hidden />
                   <span className="text-tertiary text-lg">{text}</span>
                 </li>
               ))}
