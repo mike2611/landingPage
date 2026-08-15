@@ -51,8 +51,8 @@ export default function Services() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] text-primary mb-4">
-              El Proceso
+            <p className="text-sm font-black tracking-[0.35em] max-sm:tracking-[0.28em] text-primary mb-4 uppercase">
+              Proceso
             </p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-heading">
               Metodología de Precisión

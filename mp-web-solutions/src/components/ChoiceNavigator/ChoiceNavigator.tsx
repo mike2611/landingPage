@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
-const PRODUCTS_BG = "/images/productos_bg.png";
+const SOLUCIONES_BG = "/images/productos_bg.png";
 
 const CONSULTING_BG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBibSgy1NiVPKdfi-mABluMZuFe67J0cen8kKeHqfDaeTHtzYoTiJnewqWPauNQZyZoAuyHjrCq6sMy47VRH0ZFBVGaDThV6fb6caVjrm9w8IJlf8rS4c3GK-2Qgmf2l3aq4863kHGwsdUhgeEs6cG0bl7mSZagw2_nMyfG3dUC3i2qfWJUqPcpP274iK0zu-2drPhmZ-7CbOEYUEz4F_k8Rh2tW4Fus8jnvpJsVGQqt5pOl0Y1-hZBBf0MWgnn6n6UTDMlvBzr7QY";
@@ -25,7 +25,7 @@ export default function ChoiceNavigator() {
         {/* Background image */}
         <div className="absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-105">
           <img
-            src={PRODUCTS_BG}
+            src={SOLUCIONES_BG}
             alt=""
             aria-hidden
             className="w-full h-full object-cover opacity-90 mix-blend-luminosity"
@@ -39,20 +39,20 @@ export default function ChoiceNavigator() {
         <div className="relative z-10 w-full max-w-md text-center md:text-left flex flex-col items-center md:items-start gap-6">
 
           <h1 className="text-4xl md:text-5xl font-bold font-heading tracking-tight">
-            Productos web pre-diseñados.
+            Soluciones web pre-diseñadas.
           </h1>
           <p className="text-tertiary text-base md:text-lg leading-relaxed">
             Soluciones instantáneas para escalar tu presencia digital.
           </p>
           <Link
-            to="/products"
+            to="/soluciones"
             className="flex items-center gap-2 py-3 px-8 rounded-full text-sm font-semibold
                        border border-white/15 text-tertiary
                        hover:border-white/25 hover:text-white hover:bg-white/5
                        transition-all duration-200 active:scale-[0.98]
                        backdrop-blur-sm"
           >
-            Ve los productos
+            Ve las soluciones
             <ArrowRight className="w-4 h-4" strokeWidth={2} aria-hidden />
           </Link>
         </div>

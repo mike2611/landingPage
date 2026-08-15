@@ -35,7 +35,7 @@ export default function App() {
           {/* Main layout — nav + footer */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<Suspense fallback={null}><Consulting /></Suspense>} />
-            <Route path="/products"   element={<Suspense fallback={null}><Products /></Suspense>} />
+            <Route path="/soluciones"  element={<Suspense fallback={null}><Products /></Suspense>} />
             <Route path="/portfolio"  element={<Suspense fallback={null}><Portfolio /></Suspense>} />
             <Route path="/agendar"    element={<Suspense fallback={null}><Schedule /></Suspense>} />
           </Route>

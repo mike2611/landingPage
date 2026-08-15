@@ -1,14 +1,12 @@
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   githubHref,
   linkedinHref,
-  mailtoConsultHref,
   resumePublicHref,
 } from "../../lib/links";
 
 export default function Footer() {
-  const mail = mailtoConsultHref();
   const resumeUrl = resumePublicHref();
   const linkedIn = linkedinHref();
   const gh = githubHref();
@@ -18,11 +16,11 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto text-sm">
         <div className="flex items-center gap-2">
           <span className="text-tertiary font-semibold uppercase tracking-widest">
-            MP WEB SOLUTIONS
+            MP TECH SOLUTIONS
           </span>
         </div>
         <div className="text-tertiary/60 text-center md:text-start">
-          © {new Date().getFullYear()} MP Web Solutions
+          © {new Date().getFullYear()} MP Tech Solutions
         </div>
         <nav
           className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-tertiary/60"
@@ -45,10 +43,6 @@ export default function Footer() {
               Trayectoria
             </Link>
           )}
-          <a href={mail} className="hover:text-white transition-colors duration-200">
-            <Mail className="w-4 h-4 inline me-1 align-text-bottom" aria-hidden />
-            Email
-          </a>
           {linkedIn ? (
             <a
               href={linkedIn}
